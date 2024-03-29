@@ -1,0 +1,1879 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="app.css" />
+      <title>Interview Task</title>
+      <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/> -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+   <style>
+   
+  
+  .Scontainer{
+    position: relative;
+    width: 100%;
+    height: 250px;
+  }
+  
+  .card{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    font-size: 12px;
+    overflow: hidden;
+    transform-origin: center;
+    transition: 0.4s cubic-bezier(0.28, 0.55, 0.385, 1.65);
+  }
+  
+  .next{
+    position: absolute;
+    top: 53%;
+    right: 4%;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .next i {
+    background-color: #fc686d;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 50%;
+  }
+  
+  .image{ width: 100%; height: 380px; overflow: hidden; }
+  
+  .image img { width: 100%; height: 100%; }
+  
+  .detail{ padding: 15px 20px; position: relative; }
+  
+  .detail h3 { font-size: 15px; margin: 0; }
+  
+  .detail i { font-size: 10px; margin-bottom: 5px; color: #fc686d; }
+  
+  .detail p { font-size: 13px; font-weight: 500; color: #868686; margin: 0; }
+  
+  .card:nth-child(1) {
+    z-index: 10;
+    top: 0px;
+    transform-origin: top;
+    transform: scale(1);
+    opacity: 1;
+  }
+  
+  .card:nth-child(2) {
+    z-index: 9;
+    top: -15px;
+    transform-origin: top;
+    transform: scale(0.9);
+    opacity: 0.9;
+  }
+  
+  .card:nth-child(3) {
+    z-index: 8;
+    top: -30px;
+    transform-origin: top;
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  
+  .card:nth-child(4) {
+    z-index: 7;
+    top: -45px;
+    transform-origin: top;
+    transform: scale(0.7);
+    opacity: 0.7;
+  }
+  
+  .card:nth-child(5) {
+    z-index: 6;
+    top: -60px;
+    transform-origin: top;
+    transform: scale(0.6);
+    opacity: 0.6;
+  }
+  
+  .card:first-child:hover{
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05)
+  }
+  
+  .card:last-child {
+    opacity: 0;
+  }
+   </style>
+    </head>
+   <body>
+      <header class="position-fixed ">
+         <div class="container py-3">
+            <div class="row">
+               <div class="col-2 my-auto">
+                  <h5 class="logotxt">Your Logo Here</h5>
+               </div>
+               <div class="col-8 ">
+                  <nav class="navbar pt-3">
+                     <ul class="nav__links">
+                        <li data-expand="products" class="nav--link">
+                           Home       
+                           <div class="tip"></div>
+                        </li>
+                        <li data-expand="use-cases" class="nav--link">About</li>
+                        <li data-expand="developers" class="nav--link">Team</li>
+                        <li data-expand="company" class="nav--link">Products</li>
+                        <li data-expand="solutions" class="nav--link">Solutions</li>
+                        <li data-expand="company" class="nav--link">Pricing</li>
+                        <li data-expand="company" class="nav--link">Contact Us</li>
+                     </ul>
+                  </nav>
+               </div>
+               <div class="col-2 my-auto">
+                  <button class="btn btn--primary signIn">
+                     <span>Sign in</span>
+                     <div class="arrow">
+                        <div class="arrow" element-id="177">
+                           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000" height="12px" width="12px" version="1.1" id="Layer_1" viewBox="0 0 330 330" xml:space="preserve" style="
+                              fill: #0071be;
+                              position: relative;
+                              top: -8px;
+                              left: 6px;
+                              " element-id="1">
+                              <path id="XMLID_222_" d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001  c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213  C82.322,328.536,86.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606  C255,161.018,253.42,157.202,250.606,154.389z" element-id="0"></path>
+                           </svg>
+                        </div>
+                     </div>
+                  </button>
+               </div>
+            </div>
+         </div>
+         <section class="header__expandMenu">
+            <div class="menu__container">
+               <div id="products">
+                  <div class="sub__menu">
+                     <section class="d-flex wrapTabs">
+                        <div class="hoverUl">
+                           <ul class="">
+                              <li class="active" element-id="21" style="
+                                 position: relative;
+                                 ">
+                                 <section class="liSec">
+                                    <a href="#tab-1" class="hoverA" data-toggle="tab" aria-expanded="true" element-id="20">
+                                       <h6 class="hoverTabh6" element-id="19">Global Payments</h6>
+                                       <p class="hoverTabPara" element-id="18">Accept payments online, in person platform.</p>
+                                    </a>
+                                 </section>
+                                 <div class="leftArrowHover"  element-id="1">
+                                    <div class="leftArrowChildDiv" element-id="0"></div>
+                                 </div>
+                              </li>
+                              <li  element-id="21" style="
+                                 position: relative;
+                                 ">
+                                 <section class="liSec">
+                                    <a href="#tab-2" class="hoverA" data-toggle="tab" aria-expanded="true" element-id="20">
+                                       <h6 class="hoverTabh6" element-id="19">Global Payments</h6>
+                                       <p class="hoverTabPara" element-id="18">Accept payments online, in person platform.</p>
+                                    </a>
+                                 </section>
+                                 <div class="leftArrowHover"  element-id="1">
+                                    <div class="leftArrowChildDiv" element-id="0"></div>
+                                 </div>
+                              </li>
+                              <li  element-id="21" style="
+                                 position: relative;
+                                 ">
+                                 <section class="liSec">
+                                    <a href="#tab-3" class="hoverA" data-toggle="tab" aria-expanded="true" element-id="20">
+                                       <h6 class="hoverTabh6" element-id="19">Global Payments</h6>
+                                       <p class="hoverTabPara" element-id="18">Accept payments online, in person platform.</p>
+                                    </a>
+                                 </section>
+                                 <div class="leftArrowHover"  element-id="1">
+                                    <div class="leftArrowChildDiv" element-id="0"></div>
+                                 </div>
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="hoverData">
+                           <!-- Tab panes -->
+                           <div class="tab-content ">
+                              <div class="tab-pane active" id="tab-1">
+                                 <div class="row" element-id="2" style="
+                                    margin: 0px;
+                                    padding-left: 20px;
+                                    padding-right: 20px;
+                                    ">
+                                    <div class="col-6" element-id="1">
+                                       <section element-id="1" class="d-flex" style="
+                                          display: flex;
+                                          gap: 10px;
+                                          margin-bottom: 11px;
+                                          ">
+                                          <span element-id="0">
+                                             <svg class="ProductIcon " width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" element-id="3323">
+                                                <title element-id="3322">Checkout</title>
+                                                <path d="M31.54 4h-19.7c-.84 0-1.63.43-2.09 1.14a2.52 2.52 0 0 0-.18 2.39l5.1 11.46c.3.64.3 1.38 0 2.02L8 36h23.54c.97 0 1.86-.58 2.26-1.48l5.98-13.5c.3-.65.3-1.39 0-2.04L33.8 5.48A2.48 2.48 0 0 0 31.54 4z" fill="#96F" element-id="3321"></path>
+                                                <path d="M7.23 36a2.3 2.3 0 0 1-.98-.22h.04a2.43 2.43 0 0 1-1.23-1.23L.22 23.53a2.54 2.54 0 0 1 .17-2.38A2.45 2.45 0 0 1 2.46 20h19.5c.97 0 1.84.57 2.23 1.46l4.8 10.85.68 1.53c.1.22.23.42.38.6.49.64 1.2 1.3 1.98 1.51-.11.03-.3.05-.55.05H7.22z" fill="url(#product-icon-checkout-SiteMenu-a)" element-id="3320"></path>
+                                                <path d="M21.97 20c.9 0 1.72.5 2.14 1.3l.08.16 4.8 10.85.68 1.53a4.43 4.43 0 0 0 2.3 2.01l.18.07c-.2.05-.4.08-.61.08H8L14.67 21c.15-.32.22-.66.22-1.01h7.08z" fill="url(#product-icon-checkout-SiteMenu-b)" element-id="3319"></path>
+                                                <defs element-id="3318">
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-a" x1="16.01" y1="35.59" x2="16.01" y2="21.16" gradientUnits="userSpaceOnUse" element-id="3317">
+                                                      <stop stop-color="#21CFE0" element-id="3316"></stop>
+                                                      <stop offset=".17" stop-color="#20D1E0" element-id="3315"></stop>
+                                                      <stop offset=".38" stop-color="#18E2E2" element-id="3314"></stop>
+                                                      <stop offset=".61" stop-color="#13ECE3" element-id="3313"></stop>
+                                                      <stop offset="1" stop-color="#11EFE3" element-id="3312"></stop>
+                                                   </linearGradient>
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-b" x1="21.07" y1="43" x2="21.07" y2="14.5" gradientUnits="userSpaceOnUse" element-id="3311">
+                                                      <stop stop-color="#0048E5" element-id="3310"></stop>
+                                                      <stop offset="1" stop-color="#9B66FF" element-id="3309"></stop>
+                                                   </linearGradient>
+                                                </defs>
+                                             </svg>
+                                          </span>
+                                          <span element-id="2">
+                                             <h4 element-id="1" class="homeHoverTabh4">Payment</h4>
+                                             <p element-id="0" class="homeHoverTabPara">Online Payments</p>
+                                          </span>
+                                       </section>
+                                       <section element-id="1" class="d-flex" style="
+                                          display: flex;
+                                          gap: 10px;
+                                          margin-bottom: 11px;
+                                          ">
+                                          <span element-id="0">
+                                             <svg class="ProductIcon " width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" element-id="3323">
+                                                <title element-id="3322">Checkout</title>
+                                                <path d="M31.54 4h-19.7c-.84 0-1.63.43-2.09 1.14a2.52 2.52 0 0 0-.18 2.39l5.1 11.46c.3.64.3 1.38 0 2.02L8 36h23.54c.97 0 1.86-.58 2.26-1.48l5.98-13.5c.3-.65.3-1.39 0-2.04L33.8 5.48A2.48 2.48 0 0 0 31.54 4z" fill="#96F" element-id="3321"></path>
+                                                <path d="M7.23 36a2.3 2.3 0 0 1-.98-.22h.04a2.43 2.43 0 0 1-1.23-1.23L.22 23.53a2.54 2.54 0 0 1 .17-2.38A2.45 2.45 0 0 1 2.46 20h19.5c.97 0 1.84.57 2.23 1.46l4.8 10.85.68 1.53c.1.22.23.42.38.6.49.64 1.2 1.3 1.98 1.51-.11.03-.3.05-.55.05H7.22z" fill="url(#product-icon-checkout-SiteMenu-a)" element-id="3320"></path>
+                                                <path d="M21.97 20c.9 0 1.72.5 2.14 1.3l.08.16 4.8 10.85.68 1.53a4.43 4.43 0 0 0 2.3 2.01l.18.07c-.2.05-.4.08-.61.08H8L14.67 21c.15-.32.22-.66.22-1.01h7.08z" fill="url(#product-icon-checkout-SiteMenu-b)" element-id="3319"></path>
+                                                <defs element-id="3318">
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-a" x1="16.01" y1="35.59" x2="16.01" y2="21.16" gradientUnits="userSpaceOnUse" element-id="3317">
+                                                      <stop stop-color="#21CFE0" element-id="3316"></stop>
+                                                      <stop offset=".17" stop-color="#20D1E0" element-id="3315"></stop>
+                                                      <stop offset=".38" stop-color="#18E2E2" element-id="3314"></stop>
+                                                      <stop offset=".61" stop-color="#13ECE3" element-id="3313"></stop>
+                                                      <stop offset="1" stop-color="#11EFE3" element-id="3312"></stop>
+                                                   </linearGradient>
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-b" x1="21.07" y1="43" x2="21.07" y2="14.5" gradientUnits="userSpaceOnUse" element-id="3311">
+                                                      <stop stop-color="#0048E5" element-id="3310"></stop>
+                                                      <stop offset="1" stop-color="#9B66FF" element-id="3309"></stop>
+                                                   </linearGradient>
+                                                </defs>
+                                             </svg>
+                                          </span>
+                                          <span element-id="2">
+                                             <h4 element-id="1" class="homeHoverTabh4">Payment</h4>
+                                             <p element-id="0" class="homeHoverTabPara">Online Payments</p>
+                                          </span>
+                                       </section>
+                                       <section element-id="1" class="d-flex" style="
+                                          display: flex;
+                                          gap: 10px;
+                                          margin-bottom: 11px;
+                                          ">
+                                          <span element-id="0">
+                                             <svg class="ProductIcon " width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" element-id="3323">
+                                                <title element-id="3322">Checkout</title>
+                                                <path d="M31.54 4h-19.7c-.84 0-1.63.43-2.09 1.14a2.52 2.52 0 0 0-.18 2.39l5.1 11.46c.3.64.3 1.38 0 2.02L8 36h23.54c.97 0 1.86-.58 2.26-1.48l5.98-13.5c.3-.65.3-1.39 0-2.04L33.8 5.48A2.48 2.48 0 0 0 31.54 4z" fill="#96F" element-id="3321"></path>
+                                                <path d="M7.23 36a2.3 2.3 0 0 1-.98-.22h.04a2.43 2.43 0 0 1-1.23-1.23L.22 23.53a2.54 2.54 0 0 1 .17-2.38A2.45 2.45 0 0 1 2.46 20h19.5c.97 0 1.84.57 2.23 1.46l4.8 10.85.68 1.53c.1.22.23.42.38.6.49.64 1.2 1.3 1.98 1.51-.11.03-.3.05-.55.05H7.22z" fill="url(#product-icon-checkout-SiteMenu-a)" element-id="3320"></path>
+                                                <path d="M21.97 20c.9 0 1.72.5 2.14 1.3l.08.16 4.8 10.85.68 1.53a4.43 4.43 0 0 0 2.3 2.01l.18.07c-.2.05-.4.08-.61.08H8L14.67 21c.15-.32.22-.66.22-1.01h7.08z" fill="url(#product-icon-checkout-SiteMenu-b)" element-id="3319"></path>
+                                                <defs element-id="3318">
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-a" x1="16.01" y1="35.59" x2="16.01" y2="21.16" gradientUnits="userSpaceOnUse" element-id="3317">
+                                                      <stop stop-color="#21CFE0" element-id="3316"></stop>
+                                                      <stop offset=".17" stop-color="#20D1E0" element-id="3315"></stop>
+                                                      <stop offset=".38" stop-color="#18E2E2" element-id="3314"></stop>
+                                                      <stop offset=".61" stop-color="#13ECE3" element-id="3313"></stop>
+                                                      <stop offset="1" stop-color="#11EFE3" element-id="3312"></stop>
+                                                   </linearGradient>
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-b" x1="21.07" y1="43" x2="21.07" y2="14.5" gradientUnits="userSpaceOnUse" element-id="3311">
+                                                      <stop stop-color="#0048E5" element-id="3310"></stop>
+                                                      <stop offset="1" stop-color="#9B66FF" element-id="3309"></stop>
+                                                   </linearGradient>
+                                                </defs>
+                                             </svg>
+                                          </span>
+                                          <span element-id="2">
+                                             <h4 element-id="1" class="homeHoverTabh4">Payment</h4>
+                                             <p element-id="0" class="homeHoverTabPara">Online Payments</p>
+                                          </span>
+                                       </section>
+                                       <section element-id="1" class="d-flex" style="
+                                          display: flex;
+                                          gap: 10px;
+                                          margin-bottom: 11px;
+                                          ">
+                                          <span element-id="0">
+                                             <svg class="ProductIcon " width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" element-id="3323">
+                                                <title element-id="3322">Checkout</title>
+                                                <path d="M31.54 4h-19.7c-.84 0-1.63.43-2.09 1.14a2.52 2.52 0 0 0-.18 2.39l5.1 11.46c.3.64.3 1.38 0 2.02L8 36h23.54c.97 0 1.86-.58 2.26-1.48l5.98-13.5c.3-.65.3-1.39 0-2.04L33.8 5.48A2.48 2.48 0 0 0 31.54 4z" fill="#96F" element-id="3321"></path>
+                                                <path d="M7.23 36a2.3 2.3 0 0 1-.98-.22h.04a2.43 2.43 0 0 1-1.23-1.23L.22 23.53a2.54 2.54 0 0 1 .17-2.38A2.45 2.45 0 0 1 2.46 20h19.5c.97 0 1.84.57 2.23 1.46l4.8 10.85.68 1.53c.1.22.23.42.38.6.49.64 1.2 1.3 1.98 1.51-.11.03-.3.05-.55.05H7.22z" fill="url(#product-icon-checkout-SiteMenu-a)" element-id="3320"></path>
+                                                <path d="M21.97 20c.9 0 1.72.5 2.14 1.3l.08.16 4.8 10.85.68 1.53a4.43 4.43 0 0 0 2.3 2.01l.18.07c-.2.05-.4.08-.61.08H8L14.67 21c.15-.32.22-.66.22-1.01h7.08z" fill="url(#product-icon-checkout-SiteMenu-b)" element-id="3319"></path>
+                                                <defs element-id="3318">
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-a" x1="16.01" y1="35.59" x2="16.01" y2="21.16" gradientUnits="userSpaceOnUse" element-id="3317">
+                                                      <stop stop-color="#21CFE0" element-id="3316"></stop>
+                                                      <stop offset=".17" stop-color="#20D1E0" element-id="3315"></stop>
+                                                      <stop offset=".38" stop-color="#18E2E2" element-id="3314"></stop>
+                                                      <stop offset=".61" stop-color="#13ECE3" element-id="3313"></stop>
+                                                      <stop offset="1" stop-color="#11EFE3" element-id="3312"></stop>
+                                                   </linearGradient>
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-b" x1="21.07" y1="43" x2="21.07" y2="14.5" gradientUnits="userSpaceOnUse" element-id="3311">
+                                                      <stop stop-color="#0048E5" element-id="3310"></stop>
+                                                      <stop offset="1" stop-color="#9B66FF" element-id="3309"></stop>
+                                                   </linearGradient>
+                                                </defs>
+                                             </svg>
+                                          </span>
+                                          <span element-id="2">
+                                             <h4 element-id="1" class="homeHoverTabh4">Payment</h4>
+                                             <p element-id="0" class="homeHoverTabPara">Online Payments</p>
+                                          </span>
+                                       </section>
+                                       <section element-id="1" class="d-flex" style="
+                                          display: flex;
+                                          gap: 10px;
+                                          margin-bottom: 11px;
+                                          ">
+                                          <span element-id="0">
+                                             <svg class="ProductIcon " width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" element-id="3323">
+                                                <title element-id="3322">Checkout</title>
+                                                <path d="M31.54 4h-19.7c-.84 0-1.63.43-2.09 1.14a2.52 2.52 0 0 0-.18 2.39l5.1 11.46c.3.64.3 1.38 0 2.02L8 36h23.54c.97 0 1.86-.58 2.26-1.48l5.98-13.5c.3-.65.3-1.39 0-2.04L33.8 5.48A2.48 2.48 0 0 0 31.54 4z" fill="#96F" element-id="3321"></path>
+                                                <path d="M7.23 36a2.3 2.3 0 0 1-.98-.22h.04a2.43 2.43 0 0 1-1.23-1.23L.22 23.53a2.54 2.54 0 0 1 .17-2.38A2.45 2.45 0 0 1 2.46 20h19.5c.97 0 1.84.57 2.23 1.46l4.8 10.85.68 1.53c.1.22.23.42.38.6.49.64 1.2 1.3 1.98 1.51-.11.03-.3.05-.55.05H7.22z" fill="url(#product-icon-checkout-SiteMenu-a)" element-id="3320"></path>
+                                                <path d="M21.97 20c.9 0 1.72.5 2.14 1.3l.08.16 4.8 10.85.68 1.53a4.43 4.43 0 0 0 2.3 2.01l.18.07c-.2.05-.4.08-.61.08H8L14.67 21c.15-.32.22-.66.22-1.01h7.08z" fill="url(#product-icon-checkout-SiteMenu-b)" element-id="3319"></path>
+                                                <defs element-id="3318">
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-a" x1="16.01" y1="35.59" x2="16.01" y2="21.16" gradientUnits="userSpaceOnUse" element-id="3317">
+                                                      <stop stop-color="#21CFE0" element-id="3316"></stop>
+                                                      <stop offset=".17" stop-color="#20D1E0" element-id="3315"></stop>
+                                                      <stop offset=".38" stop-color="#18E2E2" element-id="3314"></stop>
+                                                      <stop offset=".61" stop-color="#13ECE3" element-id="3313"></stop>
+                                                      <stop offset="1" stop-color="#11EFE3" element-id="3312"></stop>
+                                                   </linearGradient>
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-b" x1="21.07" y1="43" x2="21.07" y2="14.5" gradientUnits="userSpaceOnUse" element-id="3311">
+                                                      <stop stop-color="#0048E5" element-id="3310"></stop>
+                                                      <stop offset="1" stop-color="#9B66FF" element-id="3309"></stop>
+                                                   </linearGradient>
+                                                </defs>
+                                             </svg>
+                                          </span>
+                                          <span element-id="2">
+                                             <h4 element-id="1" class="homeHoverTabh4">Payment</h4>
+                                             <p element-id="0" class="homeHoverTabPara">Online Payments</p>
+                                          </span>
+                                       </section>
+                                       <section element-id="1" class="d-flex" style="
+                                          display: flex;
+                                          gap: 10px;
+                                          margin-bottom: 11px;
+                                          ">
+                                          <span element-id="0">
+                                             <svg class="ProductIcon " width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" element-id="3323">
+                                                <title element-id="3322">Checkout</title>
+                                                <path d="M31.54 4h-19.7c-.84 0-1.63.43-2.09 1.14a2.52 2.52 0 0 0-.18 2.39l5.1 11.46c.3.64.3 1.38 0 2.02L8 36h23.54c.97 0 1.86-.58 2.26-1.48l5.98-13.5c.3-.65.3-1.39 0-2.04L33.8 5.48A2.48 2.48 0 0 0 31.54 4z" fill="#96F" element-id="3321"></path>
+                                                <path d="M7.23 36a2.3 2.3 0 0 1-.98-.22h.04a2.43 2.43 0 0 1-1.23-1.23L.22 23.53a2.54 2.54 0 0 1 .17-2.38A2.45 2.45 0 0 1 2.46 20h19.5c.97 0 1.84.57 2.23 1.46l4.8 10.85.68 1.53c.1.22.23.42.38.6.49.64 1.2 1.3 1.98 1.51-.11.03-.3.05-.55.05H7.22z" fill="url(#product-icon-checkout-SiteMenu-a)" element-id="3320"></path>
+                                                <path d="M21.97 20c.9 0 1.72.5 2.14 1.3l.08.16 4.8 10.85.68 1.53a4.43 4.43 0 0 0 2.3 2.01l.18.07c-.2.05-.4.08-.61.08H8L14.67 21c.15-.32.22-.66.22-1.01h7.08z" fill="url(#product-icon-checkout-SiteMenu-b)" element-id="3319"></path>
+                                                <defs element-id="3318">
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-a" x1="16.01" y1="35.59" x2="16.01" y2="21.16" gradientUnits="userSpaceOnUse" element-id="3317">
+                                                      <stop stop-color="#21CFE0" element-id="3316"></stop>
+                                                      <stop offset=".17" stop-color="#20D1E0" element-id="3315"></stop>
+                                                      <stop offset=".38" stop-color="#18E2E2" element-id="3314"></stop>
+                                                      <stop offset=".61" stop-color="#13ECE3" element-id="3313"></stop>
+                                                      <stop offset="1" stop-color="#11EFE3" element-id="3312"></stop>
+                                                   </linearGradient>
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-b" x1="21.07" y1="43" x2="21.07" y2="14.5" gradientUnits="userSpaceOnUse" element-id="3311">
+                                                      <stop stop-color="#0048E5" element-id="3310"></stop>
+                                                      <stop offset="1" stop-color="#9B66FF" element-id="3309"></stop>
+                                                   </linearGradient>
+                                                </defs>
+                                             </svg>
+                                          </span>
+                                          <span element-id="2">
+                                             <h4 element-id="1" class="homeHoverTabh4">Payment</h4>
+                                             <p element-id="0" class="homeHoverTabPara">Online Payments</p>
+                                          </span>
+                                       </section>
+                                    </div>
+                                    <div class="col-6" element-id="1">
+                                       <section element-id="1" class="d-flex" style="
+                                          display: flex;
+                                          gap: 10px;
+                                          margin-bottom: 11px;
+                                          ">
+                                          <span element-id="0">
+                                             <svg class="ProductIcon " width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" element-id="3323">
+                                                <title element-id="3322">Checkout</title>
+                                                <path d="M31.54 4h-19.7c-.84 0-1.63.43-2.09 1.14a2.52 2.52 0 0 0-.18 2.39l5.1 11.46c.3.64.3 1.38 0 2.02L8 36h23.54c.97 0 1.86-.58 2.26-1.48l5.98-13.5c.3-.65.3-1.39 0-2.04L33.8 5.48A2.48 2.48 0 0 0 31.54 4z" fill="#96F" element-id="3321"></path>
+                                                <path d="M7.23 36a2.3 2.3 0 0 1-.98-.22h.04a2.43 2.43 0 0 1-1.23-1.23L.22 23.53a2.54 2.54 0 0 1 .17-2.38A2.45 2.45 0 0 1 2.46 20h19.5c.97 0 1.84.57 2.23 1.46l4.8 10.85.68 1.53c.1.22.23.42.38.6.49.64 1.2 1.3 1.98 1.51-.11.03-.3.05-.55.05H7.22z" fill="url(#product-icon-checkout-SiteMenu-a)" element-id="3320"></path>
+                                                <path d="M21.97 20c.9 0 1.72.5 2.14 1.3l.08.16 4.8 10.85.68 1.53a4.43 4.43 0 0 0 2.3 2.01l.18.07c-.2.05-.4.08-.61.08H8L14.67 21c.15-.32.22-.66.22-1.01h7.08z" fill="url(#product-icon-checkout-SiteMenu-b)" element-id="3319"></path>
+                                                <defs element-id="3318">
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-a" x1="16.01" y1="35.59" x2="16.01" y2="21.16" gradientUnits="userSpaceOnUse" element-id="3317">
+                                                      <stop stop-color="#21CFE0" element-id="3316"></stop>
+                                                      <stop offset=".17" stop-color="#20D1E0" element-id="3315"></stop>
+                                                      <stop offset=".38" stop-color="#18E2E2" element-id="3314"></stop>
+                                                      <stop offset=".61" stop-color="#13ECE3" element-id="3313"></stop>
+                                                      <stop offset="1" stop-color="#11EFE3" element-id="3312"></stop>
+                                                   </linearGradient>
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-b" x1="21.07" y1="43" x2="21.07" y2="14.5" gradientUnits="userSpaceOnUse" element-id="3311">
+                                                      <stop stop-color="#0048E5" element-id="3310"></stop>
+                                                      <stop offset="1" stop-color="#9B66FF" element-id="3309"></stop>
+                                                   </linearGradient>
+                                                </defs>
+                                             </svg>
+                                          </span>
+                                          <span element-id="2">
+                                             <h4 element-id="1" class="homeHoverTabh4">Payment</h4>
+                                             <p element-id="0" class="homeHoverTabPara">Online Payments</p>
+                                          </span>
+                                       </section>
+                                       <section element-id="1" class="d-flex" style="
+                                          display: flex;
+                                          gap: 10px;
+                                          margin-bottom: 11px;
+                                          ">
+                                          <span element-id="0">
+                                             <svg class="ProductIcon " width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" element-id="3323">
+                                                <title element-id="3322">Checkout</title>
+                                                <path d="M31.54 4h-19.7c-.84 0-1.63.43-2.09 1.14a2.52 2.52 0 0 0-.18 2.39l5.1 11.46c.3.64.3 1.38 0 2.02L8 36h23.54c.97 0 1.86-.58 2.26-1.48l5.98-13.5c.3-.65.3-1.39 0-2.04L33.8 5.48A2.48 2.48 0 0 0 31.54 4z" fill="#96F" element-id="3321"></path>
+                                                <path d="M7.23 36a2.3 2.3 0 0 1-.98-.22h.04a2.43 2.43 0 0 1-1.23-1.23L.22 23.53a2.54 2.54 0 0 1 .17-2.38A2.45 2.45 0 0 1 2.46 20h19.5c.97 0 1.84.57 2.23 1.46l4.8 10.85.68 1.53c.1.22.23.42.38.6.49.64 1.2 1.3 1.98 1.51-.11.03-.3.05-.55.05H7.22z" fill="url(#product-icon-checkout-SiteMenu-a)" element-id="3320"></path>
+                                                <path d="M21.97 20c.9 0 1.72.5 2.14 1.3l.08.16 4.8 10.85.68 1.53a4.43 4.43 0 0 0 2.3 2.01l.18.07c-.2.05-.4.08-.61.08H8L14.67 21c.15-.32.22-.66.22-1.01h7.08z" fill="url(#product-icon-checkout-SiteMenu-b)" element-id="3319"></path>
+                                                <defs element-id="3318">
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-a" x1="16.01" y1="35.59" x2="16.01" y2="21.16" gradientUnits="userSpaceOnUse" element-id="3317">
+                                                      <stop stop-color="#21CFE0" element-id="3316"></stop>
+                                                      <stop offset=".17" stop-color="#20D1E0" element-id="3315"></stop>
+                                                      <stop offset=".38" stop-color="#18E2E2" element-id="3314"></stop>
+                                                      <stop offset=".61" stop-color="#13ECE3" element-id="3313"></stop>
+                                                      <stop offset="1" stop-color="#11EFE3" element-id="3312"></stop>
+                                                   </linearGradient>
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-b" x1="21.07" y1="43" x2="21.07" y2="14.5" gradientUnits="userSpaceOnUse" element-id="3311">
+                                                      <stop stop-color="#0048E5" element-id="3310"></stop>
+                                                      <stop offset="1" stop-color="#9B66FF" element-id="3309"></stop>
+                                                   </linearGradient>
+                                                </defs>
+                                             </svg>
+                                          </span>
+                                          <span element-id="2">
+                                             <h4 element-id="1" class="homeHoverTabh4">Payment</h4>
+                                             <p element-id="0" class="homeHoverTabPara">Online Payments</p>
+                                          </span>
+                                       </section>
+                                       <section element-id="1" class="d-flex" style="
+                                          display: flex;
+                                          gap: 10px;
+                                          margin-bottom: 11px;
+                                          ">
+                                          <span element-id="0">
+                                             <svg class="ProductIcon " width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" element-id="3323">
+                                                <title element-id="3322">Checkout</title>
+                                                <path d="M31.54 4h-19.7c-.84 0-1.63.43-2.09 1.14a2.52 2.52 0 0 0-.18 2.39l5.1 11.46c.3.64.3 1.38 0 2.02L8 36h23.54c.97 0 1.86-.58 2.26-1.48l5.98-13.5c.3-.65.3-1.39 0-2.04L33.8 5.48A2.48 2.48 0 0 0 31.54 4z" fill="#96F" element-id="3321"></path>
+                                                <path d="M7.23 36a2.3 2.3 0 0 1-.98-.22h.04a2.43 2.43 0 0 1-1.23-1.23L.22 23.53a2.54 2.54 0 0 1 .17-2.38A2.45 2.45 0 0 1 2.46 20h19.5c.97 0 1.84.57 2.23 1.46l4.8 10.85.68 1.53c.1.22.23.42.38.6.49.64 1.2 1.3 1.98 1.51-.11.03-.3.05-.55.05H7.22z" fill="url(#product-icon-checkout-SiteMenu-a)" element-id="3320"></path>
+                                                <path d="M21.97 20c.9 0 1.72.5 2.14 1.3l.08.16 4.8 10.85.68 1.53a4.43 4.43 0 0 0 2.3 2.01l.18.07c-.2.05-.4.08-.61.08H8L14.67 21c.15-.32.22-.66.22-1.01h7.08z" fill="url(#product-icon-checkout-SiteMenu-b)" element-id="3319"></path>
+                                                <defs element-id="3318">
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-a" x1="16.01" y1="35.59" x2="16.01" y2="21.16" gradientUnits="userSpaceOnUse" element-id="3317">
+                                                      <stop stop-color="#21CFE0" element-id="3316"></stop>
+                                                      <stop offset=".17" stop-color="#20D1E0" element-id="3315"></stop>
+                                                      <stop offset=".38" stop-color="#18E2E2" element-id="3314"></stop>
+                                                      <stop offset=".61" stop-color="#13ECE3" element-id="3313"></stop>
+                                                      <stop offset="1" stop-color="#11EFE3" element-id="3312"></stop>
+                                                   </linearGradient>
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-b" x1="21.07" y1="43" x2="21.07" y2="14.5" gradientUnits="userSpaceOnUse" element-id="3311">
+                                                      <stop stop-color="#0048E5" element-id="3310"></stop>
+                                                      <stop offset="1" stop-color="#9B66FF" element-id="3309"></stop>
+                                                   </linearGradient>
+                                                </defs>
+                                             </svg>
+                                          </span>
+                                          <span element-id="2">
+                                             <h4 element-id="1" class="homeHoverTabh4">Payment</h4>
+                                             <p element-id="0" class="homeHoverTabPara">Online Payments</p>
+                                          </span>
+                                       </section>
+                                       <section element-id="1" class="d-flex" style="
+                                          display: flex;
+                                          gap: 10px;
+                                          margin-bottom: 11px;
+                                          ">
+                                          <span element-id="0">
+                                             <svg class="ProductIcon " width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" element-id="3323">
+                                                <title element-id="3322">Checkout</title>
+                                                <path d="M31.54 4h-19.7c-.84 0-1.63.43-2.09 1.14a2.52 2.52 0 0 0-.18 2.39l5.1 11.46c.3.64.3 1.38 0 2.02L8 36h23.54c.97 0 1.86-.58 2.26-1.48l5.98-13.5c.3-.65.3-1.39 0-2.04L33.8 5.48A2.48 2.48 0 0 0 31.54 4z" fill="#96F" element-id="3321"></path>
+                                                <path d="M7.23 36a2.3 2.3 0 0 1-.98-.22h.04a2.43 2.43 0 0 1-1.23-1.23L.22 23.53a2.54 2.54 0 0 1 .17-2.38A2.45 2.45 0 0 1 2.46 20h19.5c.97 0 1.84.57 2.23 1.46l4.8 10.85.68 1.53c.1.22.23.42.38.6.49.64 1.2 1.3 1.98 1.51-.11.03-.3.05-.55.05H7.22z" fill="url(#product-icon-checkout-SiteMenu-a)" element-id="3320"></path>
+                                                <path d="M21.97 20c.9 0 1.72.5 2.14 1.3l.08.16 4.8 10.85.68 1.53a4.43 4.43 0 0 0 2.3 2.01l.18.07c-.2.05-.4.08-.61.08H8L14.67 21c.15-.32.22-.66.22-1.01h7.08z" fill="url(#product-icon-checkout-SiteMenu-b)" element-id="3319"></path>
+                                                <defs element-id="3318">
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-a" x1="16.01" y1="35.59" x2="16.01" y2="21.16" gradientUnits="userSpaceOnUse" element-id="3317">
+                                                      <stop stop-color="#21CFE0" element-id="3316"></stop>
+                                                      <stop offset=".17" stop-color="#20D1E0" element-id="3315"></stop>
+                                                      <stop offset=".38" stop-color="#18E2E2" element-id="3314"></stop>
+                                                      <stop offset=".61" stop-color="#13ECE3" element-id="3313"></stop>
+                                                      <stop offset="1" stop-color="#11EFE3" element-id="3312"></stop>
+                                                   </linearGradient>
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-b" x1="21.07" y1="43" x2="21.07" y2="14.5" gradientUnits="userSpaceOnUse" element-id="3311">
+                                                      <stop stop-color="#0048E5" element-id="3310"></stop>
+                                                      <stop offset="1" stop-color="#9B66FF" element-id="3309"></stop>
+                                                   </linearGradient>
+                                                </defs>
+                                             </svg>
+                                          </span>
+                                          <span element-id="2">
+                                             <h4 element-id="1" class="homeHoverTabh4">Payment</h4>
+                                             <p element-id="0" class="homeHoverTabPara">Online Payments</p>
+                                          </span>
+                                       </section>
+                                       <section element-id="1" class="d-flex" style="
+                                          display: flex;
+                                          gap: 10px;
+                                          margin-bottom: 11px;
+                                          ">
+                                          <span element-id="0">
+                                             <svg class="ProductIcon " width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" element-id="3323">
+                                                <title element-id="3322">Checkout</title>
+                                                <path d="M31.54 4h-19.7c-.84 0-1.63.43-2.09 1.14a2.52 2.52 0 0 0-.18 2.39l5.1 11.46c.3.64.3 1.38 0 2.02L8 36h23.54c.97 0 1.86-.58 2.26-1.48l5.98-13.5c.3-.65.3-1.39 0-2.04L33.8 5.48A2.48 2.48 0 0 0 31.54 4z" fill="#96F" element-id="3321"></path>
+                                                <path d="M7.23 36a2.3 2.3 0 0 1-.98-.22h.04a2.43 2.43 0 0 1-1.23-1.23L.22 23.53a2.54 2.54 0 0 1 .17-2.38A2.45 2.45 0 0 1 2.46 20h19.5c.97 0 1.84.57 2.23 1.46l4.8 10.85.68 1.53c.1.22.23.42.38.6.49.64 1.2 1.3 1.98 1.51-.11.03-.3.05-.55.05H7.22z" fill="url(#product-icon-checkout-SiteMenu-a)" element-id="3320"></path>
+                                                <path d="M21.97 20c.9 0 1.72.5 2.14 1.3l.08.16 4.8 10.85.68 1.53a4.43 4.43 0 0 0 2.3 2.01l.18.07c-.2.05-.4.08-.61.08H8L14.67 21c.15-.32.22-.66.22-1.01h7.08z" fill="url(#product-icon-checkout-SiteMenu-b)" element-id="3319"></path>
+                                                <defs element-id="3318">
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-a" x1="16.01" y1="35.59" x2="16.01" y2="21.16" gradientUnits="userSpaceOnUse" element-id="3317">
+                                                      <stop stop-color="#21CFE0" element-id="3316"></stop>
+                                                      <stop offset=".17" stop-color="#20D1E0" element-id="3315"></stop>
+                                                      <stop offset=".38" stop-color="#18E2E2" element-id="3314"></stop>
+                                                      <stop offset=".61" stop-color="#13ECE3" element-id="3313"></stop>
+                                                      <stop offset="1" stop-color="#11EFE3" element-id="3312"></stop>
+                                                   </linearGradient>
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-b" x1="21.07" y1="43" x2="21.07" y2="14.5" gradientUnits="userSpaceOnUse" element-id="3311">
+                                                      <stop stop-color="#0048E5" element-id="3310"></stop>
+                                                      <stop offset="1" stop-color="#9B66FF" element-id="3309"></stop>
+                                                   </linearGradient>
+                                                </defs>
+                                             </svg>
+                                          </span>
+                                          <span element-id="2">
+                                             <h4 element-id="1" class="homeHoverTabh4">Payment</h4>
+                                             <p element-id="0" class="homeHoverTabPara">Online Payments</p>
+                                          </span>
+                                       </section>
+                                       <section element-id="1" class="d-flex" style="
+                                          display: flex;
+                                          gap: 10px;
+                                          margin-bottom: 11px;
+                                          ">
+                                          <span element-id="0">
+                                             <svg class="ProductIcon " width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" element-id="3323">
+                                                <title element-id="3322">Checkout</title>
+                                                <path d="M31.54 4h-19.7c-.84 0-1.63.43-2.09 1.14a2.52 2.52 0 0 0-.18 2.39l5.1 11.46c.3.64.3 1.38 0 2.02L8 36h23.54c.97 0 1.86-.58 2.26-1.48l5.98-13.5c.3-.65.3-1.39 0-2.04L33.8 5.48A2.48 2.48 0 0 0 31.54 4z" fill="#96F" element-id="3321"></path>
+                                                <path d="M7.23 36a2.3 2.3 0 0 1-.98-.22h.04a2.43 2.43 0 0 1-1.23-1.23L.22 23.53a2.54 2.54 0 0 1 .17-2.38A2.45 2.45 0 0 1 2.46 20h19.5c.97 0 1.84.57 2.23 1.46l4.8 10.85.68 1.53c.1.22.23.42.38.6.49.64 1.2 1.3 1.98 1.51-.11.03-.3.05-.55.05H7.22z" fill="url(#product-icon-checkout-SiteMenu-a)" element-id="3320"></path>
+                                                <path d="M21.97 20c.9 0 1.72.5 2.14 1.3l.08.16 4.8 10.85.68 1.53a4.43 4.43 0 0 0 2.3 2.01l.18.07c-.2.05-.4.08-.61.08H8L14.67 21c.15-.32.22-.66.22-1.01h7.08z" fill="url(#product-icon-checkout-SiteMenu-b)" element-id="3319"></path>
+                                                <defs element-id="3318">
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-a" x1="16.01" y1="35.59" x2="16.01" y2="21.16" gradientUnits="userSpaceOnUse" element-id="3317">
+                                                      <stop stop-color="#21CFE0" element-id="3316"></stop>
+                                                      <stop offset=".17" stop-color="#20D1E0" element-id="3315"></stop>
+                                                      <stop offset=".38" stop-color="#18E2E2" element-id="3314"></stop>
+                                                      <stop offset=".61" stop-color="#13ECE3" element-id="3313"></stop>
+                                                      <stop offset="1" stop-color="#11EFE3" element-id="3312"></stop>
+                                                   </linearGradient>
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-b" x1="21.07" y1="43" x2="21.07" y2="14.5" gradientUnits="userSpaceOnUse" element-id="3311">
+                                                      <stop stop-color="#0048E5" element-id="3310"></stop>
+                                                      <stop offset="1" stop-color="#9B66FF" element-id="3309"></stop>
+                                                   </linearGradient>
+                                                </defs>
+                                             </svg>
+                                          </span>
+                                          <span element-id="2">
+                                             <h4 element-id="1" class="homeHoverTabh4">Payment</h4>
+                                             <p element-id="0" class="homeHoverTabPara">Online Payments</p>
+                                          </span>
+                                       </section>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="tab-pane" id="tab-2">
+                                 <div class="row" element-id="2" style="
+                                    margin: 0px;
+                                    padding-left: 20px;
+                                    padding-right: 20px;
+                                    ">
+                                    <div class="col-6" element-id="1">
+                                       <section element-id="1" class="d-flex" style="
+                                          display: flex;
+                                          gap: 10px;
+                                          margin-bottom: 11px;
+                                          ">
+                                          <span element-id="0">
+                                             <svg class="ProductIcon ProductIcon--Invoicing " width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" element-id="3179">
+                                                <title element-id="3178">Invoicing</title>
+                                                <path d="M12.5001 1C11.1194 1 10.0001 2.11929 10.0001 3.5V36.3314C10.0001 37.4628 9.24028 38.4532 8.14746 38.7462L36.1472 31.24C37.2401 30.9472 38.0001 29.9567 38.0001 28.8252V3.5C38.0001 2.11929 36.8808 1 35.5001 1H12.5001Z" fill="#00D924" element-id="3177"></path>
+                                                <path d="M1.25338 24.5476C0.0575759 25.238 -0.352092 26.7668 0.338338 27.9626L5.81522 37.449C6.38097 38.4289 7.53438 38.9067 8.62734 38.6138L34.7744 31.6076L24.5869 13.9626C23.8969 12.7668 22.3676 12.3571 21.1718 13.0476L1.25338 24.5476Z" fill="url(#product-icon-invoicing-SiteMenu-a)" element-id="3176"></path>
+                                                <path d="M8.40173 38.6633C8.4771 38.6504 8.55237 38.6339 8.62737 38.6138L34.7744 31.6076L24.5869 13.9626C23.897 12.7668 22.3677 12.3571 21.1719 13.0476L10.0002 19.4976V36.3314C10.0002 37.3728 9.35638 38.2947 8.40173 38.6633Z" fill="url(#product-icon-invoicing-SiteMenu-b)" element-id="3175"></path>
+                                                <defs element-id="3174">
+                                                   <linearGradient id="product-icon-invoicing-SiteMenu-a" x1="17.3897" y1="20.25" x2="17.3893" y2="38" gradientUnits="userSpaceOnUse" element-id="3173">
+                                                      <stop stop-color="#FFD748" element-id="3172"></stop>
+                                                      <stop offset="1" stop-color="#FFC148" element-id="3171"></stop>
+                                                   </linearGradient>
+                                                   <linearGradient id="product-icon-invoicing-SiteMenu-b" x1="21.5889" y1="12.7122" x2="21.5881" y2="38.6633" gradientUnits="userSpaceOnUse" element-id="3170">
+                                                      <stop stop-color="#00A600" element-id="3169"></stop>
+                                                      <stop offset="1" stop-color="#00D924" element-id="3168"></stop>
+                                                   </linearGradient>
+                                                </defs>
+                                             </svg>
+                                          </span>
+                                          <span element-id="2">
+                                             <h4 element-id="1" class="homeHoverTabh4">Payment</h4>
+                                             <p element-id="0" class="homeHoverTabPara">Online Payments</p>
+                                          </span>
+                                       </section>
+                                       <section element-id="1" class="d-flex" style="
+                                          display: flex;
+                                          gap: 10px;
+                                          margin-bottom: 11px;
+                                          ">
+                                          <span element-id="0">
+                                             <svg class="ProductIcon ProductIcon--Invoicing " width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" element-id="3179">
+                                                <title element-id="3178">Invoicing</title>
+                                                <path d="M12.5001 1C11.1194 1 10.0001 2.11929 10.0001 3.5V36.3314C10.0001 37.4628 9.24028 38.4532 8.14746 38.7462L36.1472 31.24C37.2401 30.9472 38.0001 29.9567 38.0001 28.8252V3.5C38.0001 2.11929 36.8808 1 35.5001 1H12.5001Z" fill="#00D924" element-id="3177"></path>
+                                                <path d="M1.25338 24.5476C0.0575759 25.238 -0.352092 26.7668 0.338338 27.9626L5.81522 37.449C6.38097 38.4289 7.53438 38.9067 8.62734 38.6138L34.7744 31.6076L24.5869 13.9626C23.8969 12.7668 22.3676 12.3571 21.1718 13.0476L1.25338 24.5476Z" fill="url(#product-icon-invoicing-SiteMenu-a)" element-id="3176"></path>
+                                                <path d="M8.40173 38.6633C8.4771 38.6504 8.55237 38.6339 8.62737 38.6138L34.7744 31.6076L24.5869 13.9626C23.897 12.7668 22.3677 12.3571 21.1719 13.0476L10.0002 19.4976V36.3314C10.0002 37.3728 9.35638 38.2947 8.40173 38.6633Z" fill="url(#product-icon-invoicing-SiteMenu-b)" element-id="3175"></path>
+                                                <defs element-id="3174">
+                                                   <linearGradient id="product-icon-invoicing-SiteMenu-a" x1="17.3897" y1="20.25" x2="17.3893" y2="38" gradientUnits="userSpaceOnUse" element-id="3173">
+                                                      <stop stop-color="#FFD748" element-id="3172"></stop>
+                                                      <stop offset="1" stop-color="#FFC148" element-id="3171"></stop>
+                                                   </linearGradient>
+                                                   <linearGradient id="product-icon-invoicing-SiteMenu-b" x1="21.5889" y1="12.7122" x2="21.5881" y2="38.6633" gradientUnits="userSpaceOnUse" element-id="3170">
+                                                      <stop stop-color="#00A600" element-id="3169"></stop>
+                                                      <stop offset="1" stop-color="#00D924" element-id="3168"></stop>
+                                                   </linearGradient>
+                                                </defs>
+                                             </svg>
+                                          </span>
+                                          <span element-id="2">
+                                             <h4 element-id="1" class="homeHoverTabh4">Payment</h4>
+                                             <p element-id="0" class="homeHoverTabPara">Online Payments</p>
+                                          </span>
+                                       </section>
+                                       <section element-id="1" class="d-flex" style="
+                                          display: flex;
+                                          gap: 10px;
+                                          margin-bottom: 11px;
+                                          ">
+                                          <span element-id="0">
+                                             <svg class="ProductIcon " width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" element-id="3323">
+                                                <title element-id="3322">Checkout</title>
+                                                <path d="M31.54 4h-19.7c-.84 0-1.63.43-2.09 1.14a2.52 2.52 0 0 0-.18 2.39l5.1 11.46c.3.64.3 1.38 0 2.02L8 36h23.54c.97 0 1.86-.58 2.26-1.48l5.98-13.5c.3-.65.3-1.39 0-2.04L33.8 5.48A2.48 2.48 0 0 0 31.54 4z" fill="#96F" element-id="3321"></path>
+                                                <path d="M7.23 36a2.3 2.3 0 0 1-.98-.22h.04a2.43 2.43 0 0 1-1.23-1.23L.22 23.53a2.54 2.54 0 0 1 .17-2.38A2.45 2.45 0 0 1 2.46 20h19.5c.97 0 1.84.57 2.23 1.46l4.8 10.85.68 1.53c.1.22.23.42.38.6.49.64 1.2 1.3 1.98 1.51-.11.03-.3.05-.55.05H7.22z" fill="url(#product-icon-checkout-SiteMenu-a)" element-id="3320"></path>
+                                                <path d="M21.97 20c.9 0 1.72.5 2.14 1.3l.08.16 4.8 10.85.68 1.53a4.43 4.43 0 0 0 2.3 2.01l.18.07c-.2.05-.4.08-.61.08H8L14.67 21c.15-.32.22-.66.22-1.01h7.08z" fill="url(#product-icon-checkout-SiteMenu-b)" element-id="3319"></path>
+                                                <defs element-id="3318">
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-a" x1="16.01" y1="35.59" x2="16.01" y2="21.16" gradientUnits="userSpaceOnUse" element-id="3317">
+                                                      <stop stop-color="#21CFE0" element-id="3316"></stop>
+                                                      <stop offset=".17" stop-color="#20D1E0" element-id="3315"></stop>
+                                                      <stop offset=".38" stop-color="#18E2E2" element-id="3314"></stop>
+                                                      <stop offset=".61" stop-color="#13ECE3" element-id="3313"></stop>
+                                                      <stop offset="1" stop-color="#11EFE3" element-id="3312"></stop>
+                                                   </linearGradient>
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-b" x1="21.07" y1="43" x2="21.07" y2="14.5" gradientUnits="userSpaceOnUse" element-id="3311">
+                                                      <stop stop-color="#0048E5" element-id="3310"></stop>
+                                                      <stop offset="1" stop-color="#9B66FF" element-id="3309"></stop>
+                                                   </linearGradient>
+                                                </defs>
+                                             </svg>
+                                          </span>
+                                          <span element-id="2">
+                                             <h4 element-id="1" class="homeHoverTabh4">Payment</h4>
+                                             <p element-id="0" class="homeHoverTabPara">Online Payments</p>
+                                          </span>
+                                       </section>
+                                       <section element-id="1" class="d-flex" style="
+                                          display: flex;
+                                          gap: 10px;
+                                          margin-bottom: 11px;
+                                          ">
+                                          <span element-id="0">
+                                             <svg class="ProductIcon " width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" element-id="3323">
+                                                <title element-id="3322">Checkout</title>
+                                                <path d="M31.54 4h-19.7c-.84 0-1.63.43-2.09 1.14a2.52 2.52 0 0 0-.18 2.39l5.1 11.46c.3.64.3 1.38 0 2.02L8 36h23.54c.97 0 1.86-.58 2.26-1.48l5.98-13.5c.3-.65.3-1.39 0-2.04L33.8 5.48A2.48 2.48 0 0 0 31.54 4z" fill="#96F" element-id="3321"></path>
+                                                <path d="M7.23 36a2.3 2.3 0 0 1-.98-.22h.04a2.43 2.43 0 0 1-1.23-1.23L.22 23.53a2.54 2.54 0 0 1 .17-2.38A2.45 2.45 0 0 1 2.46 20h19.5c.97 0 1.84.57 2.23 1.46l4.8 10.85.68 1.53c.1.22.23.42.38.6.49.64 1.2 1.3 1.98 1.51-.11.03-.3.05-.55.05H7.22z" fill="url(#product-icon-checkout-SiteMenu-a)" element-id="3320"></path>
+                                                <path d="M21.97 20c.9 0 1.72.5 2.14 1.3l.08.16 4.8 10.85.68 1.53a4.43 4.43 0 0 0 2.3 2.01l.18.07c-.2.05-.4.08-.61.08H8L14.67 21c.15-.32.22-.66.22-1.01h7.08z" fill="url(#product-icon-checkout-SiteMenu-b)" element-id="3319"></path>
+                                                <defs element-id="3318">
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-a" x1="16.01" y1="35.59" x2="16.01" y2="21.16" gradientUnits="userSpaceOnUse" element-id="3317">
+                                                      <stop stop-color="#21CFE0" element-id="3316"></stop>
+                                                      <stop offset=".17" stop-color="#20D1E0" element-id="3315"></stop>
+                                                      <stop offset=".38" stop-color="#18E2E2" element-id="3314"></stop>
+                                                      <stop offset=".61" stop-color="#13ECE3" element-id="3313"></stop>
+                                                      <stop offset="1" stop-color="#11EFE3" element-id="3312"></stop>
+                                                   </linearGradient>
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-b" x1="21.07" y1="43" x2="21.07" y2="14.5" gradientUnits="userSpaceOnUse" element-id="3311">
+                                                      <stop stop-color="#0048E5" element-id="3310"></stop>
+                                                      <stop offset="1" stop-color="#9B66FF" element-id="3309"></stop>
+                                                   </linearGradient>
+                                                </defs>
+                                             </svg>
+                                          </span>
+                                          <span element-id="2">
+                                             <h4 element-id="1" class="homeHoverTabh4">Payment</h4>
+                                             <p element-id="0" class="homeHoverTabPara">Online Payments</p>
+                                          </span>
+                                       </section>
+                                       <section element-id="1" class="d-flex" style="
+                                          display: flex;
+                                          gap: 10px;
+                                          margin-bottom: 11px;
+                                          ">
+                                          <span element-id="0">
+                                             <svg class="ProductIcon " width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" element-id="3323">
+                                                <title element-id="3322">Checkout</title>
+                                                <path d="M31.54 4h-19.7c-.84 0-1.63.43-2.09 1.14a2.52 2.52 0 0 0-.18 2.39l5.1 11.46c.3.64.3 1.38 0 2.02L8 36h23.54c.97 0 1.86-.58 2.26-1.48l5.98-13.5c.3-.65.3-1.39 0-2.04L33.8 5.48A2.48 2.48 0 0 0 31.54 4z" fill="#96F" element-id="3321"></path>
+                                                <path d="M7.23 36a2.3 2.3 0 0 1-.98-.22h.04a2.43 2.43 0 0 1-1.23-1.23L.22 23.53a2.54 2.54 0 0 1 .17-2.38A2.45 2.45 0 0 1 2.46 20h19.5c.97 0 1.84.57 2.23 1.46l4.8 10.85.68 1.53c.1.22.23.42.38.6.49.64 1.2 1.3 1.98 1.51-.11.03-.3.05-.55.05H7.22z" fill="url(#product-icon-checkout-SiteMenu-a)" element-id="3320"></path>
+                                                <path d="M21.97 20c.9 0 1.72.5 2.14 1.3l.08.16 4.8 10.85.68 1.53a4.43 4.43 0 0 0 2.3 2.01l.18.07c-.2.05-.4.08-.61.08H8L14.67 21c.15-.32.22-.66.22-1.01h7.08z" fill="url(#product-icon-checkout-SiteMenu-b)" element-id="3319"></path>
+                                                <defs element-id="3318">
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-a" x1="16.01" y1="35.59" x2="16.01" y2="21.16" gradientUnits="userSpaceOnUse" element-id="3317">
+                                                      <stop stop-color="#21CFE0" element-id="3316"></stop>
+                                                      <stop offset=".17" stop-color="#20D1E0" element-id="3315"></stop>
+                                                      <stop offset=".38" stop-color="#18E2E2" element-id="3314"></stop>
+                                                      <stop offset=".61" stop-color="#13ECE3" element-id="3313"></stop>
+                                                      <stop offset="1" stop-color="#11EFE3" element-id="3312"></stop>
+                                                   </linearGradient>
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-b" x1="21.07" y1="43" x2="21.07" y2="14.5" gradientUnits="userSpaceOnUse" element-id="3311">
+                                                      <stop stop-color="#0048E5" element-id="3310"></stop>
+                                                      <stop offset="1" stop-color="#9B66FF" element-id="3309"></stop>
+                                                   </linearGradient>
+                                                </defs>
+                                             </svg>
+                                          </span>
+                                          <span element-id="2">
+                                             <h4 element-id="1" class="homeHoverTabh4">Payment</h4>
+                                             <p element-id="0" class="homeHoverTabPara">Online Payments</p>
+                                          </span>
+                                       </section>
+                                       <section element-id="1" class="d-flex" style="
+                                          display: flex;
+                                          gap: 10px;
+                                          margin-bottom: 11px;
+                                          ">
+                                          <span element-id="0">
+                                             <svg class="ProductIcon " width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" element-id="3323">
+                                                <title element-id="3322">Checkout</title>
+                                                <path d="M31.54 4h-19.7c-.84 0-1.63.43-2.09 1.14a2.52 2.52 0 0 0-.18 2.39l5.1 11.46c.3.64.3 1.38 0 2.02L8 36h23.54c.97 0 1.86-.58 2.26-1.48l5.98-13.5c.3-.65.3-1.39 0-2.04L33.8 5.48A2.48 2.48 0 0 0 31.54 4z" fill="#96F" element-id="3321"></path>
+                                                <path d="M7.23 36a2.3 2.3 0 0 1-.98-.22h.04a2.43 2.43 0 0 1-1.23-1.23L.22 23.53a2.54 2.54 0 0 1 .17-2.38A2.45 2.45 0 0 1 2.46 20h19.5c.97 0 1.84.57 2.23 1.46l4.8 10.85.68 1.53c.1.22.23.42.38.6.49.64 1.2 1.3 1.98 1.51-.11.03-.3.05-.55.05H7.22z" fill="url(#product-icon-checkout-SiteMenu-a)" element-id="3320"></path>
+                                                <path d="M21.97 20c.9 0 1.72.5 2.14 1.3l.08.16 4.8 10.85.68 1.53a4.43 4.43 0 0 0 2.3 2.01l.18.07c-.2.05-.4.08-.61.08H8L14.67 21c.15-.32.22-.66.22-1.01h7.08z" fill="url(#product-icon-checkout-SiteMenu-b)" element-id="3319"></path>
+                                                <defs element-id="3318">
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-a" x1="16.01" y1="35.59" x2="16.01" y2="21.16" gradientUnits="userSpaceOnUse" element-id="3317">
+                                                      <stop stop-color="#21CFE0" element-id="3316"></stop>
+                                                      <stop offset=".17" stop-color="#20D1E0" element-id="3315"></stop>
+                                                      <stop offset=".38" stop-color="#18E2E2" element-id="3314"></stop>
+                                                      <stop offset=".61" stop-color="#13ECE3" element-id="3313"></stop>
+                                                      <stop offset="1" stop-color="#11EFE3" element-id="3312"></stop>
+                                                   </linearGradient>
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-b" x1="21.07" y1="43" x2="21.07" y2="14.5" gradientUnits="userSpaceOnUse" element-id="3311">
+                                                      <stop stop-color="#0048E5" element-id="3310"></stop>
+                                                      <stop offset="1" stop-color="#9B66FF" element-id="3309"></stop>
+                                                   </linearGradient>
+                                                </defs>
+                                             </svg>
+                                          </span>
+                                          <span element-id="2">
+                                             <h4 element-id="1" class="homeHoverTabh4">Payment</h4>
+                                             <p element-id="0" class="homeHoverTabPara">Online Payments</p>
+                                          </span>
+                                       </section>
+                                    </div>
+                                    <div class="col-6" element-id="1">
+                                       <section element-id="1" class="d-flex" style="
+                                          display: flex;
+                                          gap: 10px;
+                                          margin-bottom: 11px;
+                                          ">
+                                          <span element-id="0">
+                                             <svg class="ProductIcon " width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" element-id="3323">
+                                                <title element-id="3322">Checkout</title>
+                                                <path d="M31.54 4h-19.7c-.84 0-1.63.43-2.09 1.14a2.52 2.52 0 0 0-.18 2.39l5.1 11.46c.3.64.3 1.38 0 2.02L8 36h23.54c.97 0 1.86-.58 2.26-1.48l5.98-13.5c.3-.65.3-1.39 0-2.04L33.8 5.48A2.48 2.48 0 0 0 31.54 4z" fill="#96F" element-id="3321"></path>
+                                                <path d="M7.23 36a2.3 2.3 0 0 1-.98-.22h.04a2.43 2.43 0 0 1-1.23-1.23L.22 23.53a2.54 2.54 0 0 1 .17-2.38A2.45 2.45 0 0 1 2.46 20h19.5c.97 0 1.84.57 2.23 1.46l4.8 10.85.68 1.53c.1.22.23.42.38.6.49.64 1.2 1.3 1.98 1.51-.11.03-.3.05-.55.05H7.22z" fill="url(#product-icon-checkout-SiteMenu-a)" element-id="3320"></path>
+                                                <path d="M21.97 20c.9 0 1.72.5 2.14 1.3l.08.16 4.8 10.85.68 1.53a4.43 4.43 0 0 0 2.3 2.01l.18.07c-.2.05-.4.08-.61.08H8L14.67 21c.15-.32.22-.66.22-1.01h7.08z" fill="url(#product-icon-checkout-SiteMenu-b)" element-id="3319"></path>
+                                                <defs element-id="3318">
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-a" x1="16.01" y1="35.59" x2="16.01" y2="21.16" gradientUnits="userSpaceOnUse" element-id="3317">
+                                                      <stop stop-color="#21CFE0" element-id="3316"></stop>
+                                                      <stop offset=".17" stop-color="#20D1E0" element-id="3315"></stop>
+                                                      <stop offset=".38" stop-color="#18E2E2" element-id="3314"></stop>
+                                                      <stop offset=".61" stop-color="#13ECE3" element-id="3313"></stop>
+                                                      <stop offset="1" stop-color="#11EFE3" element-id="3312"></stop>
+                                                   </linearGradient>
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-b" x1="21.07" y1="43" x2="21.07" y2="14.5" gradientUnits="userSpaceOnUse" element-id="3311">
+                                                      <stop stop-color="#0048E5" element-id="3310"></stop>
+                                                      <stop offset="1" stop-color="#9B66FF" element-id="3309"></stop>
+                                                   </linearGradient>
+                                                </defs>
+                                             </svg>
+                                          </span>
+                                          <span element-id="2">
+                                             <h4 element-id="1" class="homeHoverTabh4">Payment</h4>
+                                             <p element-id="0" class="homeHoverTabPara">Online Payments</p>
+                                          </span>
+                                       </section>
+                                       <section element-id="1" class="d-flex" style="
+                                          display: flex;
+                                          gap: 10px;
+                                          margin-bottom: 11px;
+                                          ">
+                                          <span element-id="0">
+                                             <svg class="ProductIcon " width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" element-id="3323">
+                                                <title element-id="3322">Checkout</title>
+                                                <path d="M31.54 4h-19.7c-.84 0-1.63.43-2.09 1.14a2.52 2.52 0 0 0-.18 2.39l5.1 11.46c.3.64.3 1.38 0 2.02L8 36h23.54c.97 0 1.86-.58 2.26-1.48l5.98-13.5c.3-.65.3-1.39 0-2.04L33.8 5.48A2.48 2.48 0 0 0 31.54 4z" fill="#96F" element-id="3321"></path>
+                                                <path d="M7.23 36a2.3 2.3 0 0 1-.98-.22h.04a2.43 2.43 0 0 1-1.23-1.23L.22 23.53a2.54 2.54 0 0 1 .17-2.38A2.45 2.45 0 0 1 2.46 20h19.5c.97 0 1.84.57 2.23 1.46l4.8 10.85.68 1.53c.1.22.23.42.38.6.49.64 1.2 1.3 1.98 1.51-.11.03-.3.05-.55.05H7.22z" fill="url(#product-icon-checkout-SiteMenu-a)" element-id="3320"></path>
+                                                <path d="M21.97 20c.9 0 1.72.5 2.14 1.3l.08.16 4.8 10.85.68 1.53a4.43 4.43 0 0 0 2.3 2.01l.18.07c-.2.05-.4.08-.61.08H8L14.67 21c.15-.32.22-.66.22-1.01h7.08z" fill="url(#product-icon-checkout-SiteMenu-b)" element-id="3319"></path>
+                                                <defs element-id="3318">
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-a" x1="16.01" y1="35.59" x2="16.01" y2="21.16" gradientUnits="userSpaceOnUse" element-id="3317">
+                                                      <stop stop-color="#21CFE0" element-id="3316"></stop>
+                                                      <stop offset=".17" stop-color="#20D1E0" element-id="3315"></stop>
+                                                      <stop offset=".38" stop-color="#18E2E2" element-id="3314"></stop>
+                                                      <stop offset=".61" stop-color="#13ECE3" element-id="3313"></stop>
+                                                      <stop offset="1" stop-color="#11EFE3" element-id="3312"></stop>
+                                                   </linearGradient>
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-b" x1="21.07" y1="43" x2="21.07" y2="14.5" gradientUnits="userSpaceOnUse" element-id="3311">
+                                                      <stop stop-color="#0048E5" element-id="3310"></stop>
+                                                      <stop offset="1" stop-color="#9B66FF" element-id="3309"></stop>
+                                                   </linearGradient>
+                                                </defs>
+                                             </svg>
+                                          </span>
+                                          <span element-id="2">
+                                             <h4 element-id="1" class="homeHoverTabh4">Payment</h4>
+                                             <p element-id="0" class="homeHoverTabPara">Online Payments</p>
+                                          </span>
+                                       </section>
+                                       <section element-id="1" class="d-flex" style="
+                                          display: flex;
+                                          gap: 10px;
+                                          margin-bottom: 11px;
+                                          ">
+                                          <span element-id="0">
+                                             <svg class="ProductIcon " width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" element-id="3323">
+                                                <title element-id="3322">Checkout</title>
+                                                <path d="M31.54 4h-19.7c-.84 0-1.63.43-2.09 1.14a2.52 2.52 0 0 0-.18 2.39l5.1 11.46c.3.64.3 1.38 0 2.02L8 36h23.54c.97 0 1.86-.58 2.26-1.48l5.98-13.5c.3-.65.3-1.39 0-2.04L33.8 5.48A2.48 2.48 0 0 0 31.54 4z" fill="#96F" element-id="3321"></path>
+                                                <path d="M7.23 36a2.3 2.3 0 0 1-.98-.22h.04a2.43 2.43 0 0 1-1.23-1.23L.22 23.53a2.54 2.54 0 0 1 .17-2.38A2.45 2.45 0 0 1 2.46 20h19.5c.97 0 1.84.57 2.23 1.46l4.8 10.85.68 1.53c.1.22.23.42.38.6.49.64 1.2 1.3 1.98 1.51-.11.03-.3.05-.55.05H7.22z" fill="url(#product-icon-checkout-SiteMenu-a)" element-id="3320"></path>
+                                                <path d="M21.97 20c.9 0 1.72.5 2.14 1.3l.08.16 4.8 10.85.68 1.53a4.43 4.43 0 0 0 2.3 2.01l.18.07c-.2.05-.4.08-.61.08H8L14.67 21c.15-.32.22-.66.22-1.01h7.08z" fill="url(#product-icon-checkout-SiteMenu-b)" element-id="3319"></path>
+                                                <defs element-id="3318">
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-a" x1="16.01" y1="35.59" x2="16.01" y2="21.16" gradientUnits="userSpaceOnUse" element-id="3317">
+                                                      <stop stop-color="#21CFE0" element-id="3316"></stop>
+                                                      <stop offset=".17" stop-color="#20D1E0" element-id="3315"></stop>
+                                                      <stop offset=".38" stop-color="#18E2E2" element-id="3314"></stop>
+                                                      <stop offset=".61" stop-color="#13ECE3" element-id="3313"></stop>
+                                                      <stop offset="1" stop-color="#11EFE3" element-id="3312"></stop>
+                                                   </linearGradient>
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-b" x1="21.07" y1="43" x2="21.07" y2="14.5" gradientUnits="userSpaceOnUse" element-id="3311">
+                                                      <stop stop-color="#0048E5" element-id="3310"></stop>
+                                                      <stop offset="1" stop-color="#9B66FF" element-id="3309"></stop>
+                                                   </linearGradient>
+                                                </defs>
+                                             </svg>
+                                          </span>
+                                          <span element-id="2">
+                                             <h4 element-id="1" class="homeHoverTabh4">Payment</h4>
+                                             <p element-id="0" class="homeHoverTabPara">Online Payments</p>
+                                          </span>
+                                       </section>
+                                       <section element-id="1" class="d-flex" style="
+                                          display: flex;
+                                          gap: 10px;
+                                          margin-bottom: 11px;
+                                          ">
+                                          <span element-id="0">
+                                             <svg class="ProductIcon " width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" element-id="3323">
+                                                <title element-id="3322">Checkout</title>
+                                                <path d="M31.54 4h-19.7c-.84 0-1.63.43-2.09 1.14a2.52 2.52 0 0 0-.18 2.39l5.1 11.46c.3.64.3 1.38 0 2.02L8 36h23.54c.97 0 1.86-.58 2.26-1.48l5.98-13.5c.3-.65.3-1.39 0-2.04L33.8 5.48A2.48 2.48 0 0 0 31.54 4z" fill="#96F" element-id="3321"></path>
+                                                <path d="M7.23 36a2.3 2.3 0 0 1-.98-.22h.04a2.43 2.43 0 0 1-1.23-1.23L.22 23.53a2.54 2.54 0 0 1 .17-2.38A2.45 2.45 0 0 1 2.46 20h19.5c.97 0 1.84.57 2.23 1.46l4.8 10.85.68 1.53c.1.22.23.42.38.6.49.64 1.2 1.3 1.98 1.51-.11.03-.3.05-.55.05H7.22z" fill="url(#product-icon-checkout-SiteMenu-a)" element-id="3320"></path>
+                                                <path d="M21.97 20c.9 0 1.72.5 2.14 1.3l.08.16 4.8 10.85.68 1.53a4.43 4.43 0 0 0 2.3 2.01l.18.07c-.2.05-.4.08-.61.08H8L14.67 21c.15-.32.22-.66.22-1.01h7.08z" fill="url(#product-icon-checkout-SiteMenu-b)" element-id="3319"></path>
+                                                <defs element-id="3318">
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-a" x1="16.01" y1="35.59" x2="16.01" y2="21.16" gradientUnits="userSpaceOnUse" element-id="3317">
+                                                      <stop stop-color="#21CFE0" element-id="3316"></stop>
+                                                      <stop offset=".17" stop-color="#20D1E0" element-id="3315"></stop>
+                                                      <stop offset=".38" stop-color="#18E2E2" element-id="3314"></stop>
+                                                      <stop offset=".61" stop-color="#13ECE3" element-id="3313"></stop>
+                                                      <stop offset="1" stop-color="#11EFE3" element-id="3312"></stop>
+                                                   </linearGradient>
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-b" x1="21.07" y1="43" x2="21.07" y2="14.5" gradientUnits="userSpaceOnUse" element-id="3311">
+                                                      <stop stop-color="#0048E5" element-id="3310"></stop>
+                                                      <stop offset="1" stop-color="#9B66FF" element-id="3309"></stop>
+                                                   </linearGradient>
+                                                </defs>
+                                             </svg>
+                                          </span>
+                                          <span element-id="2">
+                                             <h4 element-id="1" class="homeHoverTabh4">Payment</h4>
+                                             <p element-id="0" class="homeHoverTabPara">Online Payments</p>
+                                          </span>
+                                       </section>
+                                       <section element-id="1" class="d-flex" style="
+                                          display: flex;
+                                          gap: 10px;
+                                          margin-bottom: 11px;
+                                          ">
+                                          <span element-id="0">
+                                             <svg class="ProductIcon " width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" element-id="3323">
+                                                <title element-id="3322">Checkout</title>
+                                                <path d="M31.54 4h-19.7c-.84 0-1.63.43-2.09 1.14a2.52 2.52 0 0 0-.18 2.39l5.1 11.46c.3.64.3 1.38 0 2.02L8 36h23.54c.97 0 1.86-.58 2.26-1.48l5.98-13.5c.3-.65.3-1.39 0-2.04L33.8 5.48A2.48 2.48 0 0 0 31.54 4z" fill="#96F" element-id="3321"></path>
+                                                <path d="M7.23 36a2.3 2.3 0 0 1-.98-.22h.04a2.43 2.43 0 0 1-1.23-1.23L.22 23.53a2.54 2.54 0 0 1 .17-2.38A2.45 2.45 0 0 1 2.46 20h19.5c.97 0 1.84.57 2.23 1.46l4.8 10.85.68 1.53c.1.22.23.42.38.6.49.64 1.2 1.3 1.98 1.51-.11.03-.3.05-.55.05H7.22z" fill="url(#product-icon-checkout-SiteMenu-a)" element-id="3320"></path>
+                                                <path d="M21.97 20c.9 0 1.72.5 2.14 1.3l.08.16 4.8 10.85.68 1.53a4.43 4.43 0 0 0 2.3 2.01l.18.07c-.2.05-.4.08-.61.08H8L14.67 21c.15-.32.22-.66.22-1.01h7.08z" fill="url(#product-icon-checkout-SiteMenu-b)" element-id="3319"></path>
+                                                <defs element-id="3318">
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-a" x1="16.01" y1="35.59" x2="16.01" y2="21.16" gradientUnits="userSpaceOnUse" element-id="3317">
+                                                      <stop stop-color="#21CFE0" element-id="3316"></stop>
+                                                      <stop offset=".17" stop-color="#20D1E0" element-id="3315"></stop>
+                                                      <stop offset=".38" stop-color="#18E2E2" element-id="3314"></stop>
+                                                      <stop offset=".61" stop-color="#13ECE3" element-id="3313"></stop>
+                                                      <stop offset="1" stop-color="#11EFE3" element-id="3312"></stop>
+                                                   </linearGradient>
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-b" x1="21.07" y1="43" x2="21.07" y2="14.5" gradientUnits="userSpaceOnUse" element-id="3311">
+                                                      <stop stop-color="#0048E5" element-id="3310"></stop>
+                                                      <stop offset="1" stop-color="#9B66FF" element-id="3309"></stop>
+                                                   </linearGradient>
+                                                </defs>
+                                             </svg>
+                                          </span>
+                                          <span element-id="2">
+                                             <h4 element-id="1" class="homeHoverTabh4">Payment</h4>
+                                             <p element-id="0" class="homeHoverTabPara">Online Payments</p>
+                                          </span>
+                                       </section>
+                                       <section element-id="1" class="d-flex" style="
+                                          display: flex;
+                                          gap: 10px;
+                                          margin-bottom: 11px;
+                                          ">
+                                          <span element-id="0">
+                                             <svg class="ProductIcon " width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" element-id="3323">
+                                                <title element-id="3322">Checkout</title>
+                                                <path d="M31.54 4h-19.7c-.84 0-1.63.43-2.09 1.14a2.52 2.52 0 0 0-.18 2.39l5.1 11.46c.3.64.3 1.38 0 2.02L8 36h23.54c.97 0 1.86-.58 2.26-1.48l5.98-13.5c.3-.65.3-1.39 0-2.04L33.8 5.48A2.48 2.48 0 0 0 31.54 4z" fill="#96F" element-id="3321"></path>
+                                                <path d="M7.23 36a2.3 2.3 0 0 1-.98-.22h.04a2.43 2.43 0 0 1-1.23-1.23L.22 23.53a2.54 2.54 0 0 1 .17-2.38A2.45 2.45 0 0 1 2.46 20h19.5c.97 0 1.84.57 2.23 1.46l4.8 10.85.68 1.53c.1.22.23.42.38.6.49.64 1.2 1.3 1.98 1.51-.11.03-.3.05-.55.05H7.22z" fill="url(#product-icon-checkout-SiteMenu-a)" element-id="3320"></path>
+                                                <path d="M21.97 20c.9 0 1.72.5 2.14 1.3l.08.16 4.8 10.85.68 1.53a4.43 4.43 0 0 0 2.3 2.01l.18.07c-.2.05-.4.08-.61.08H8L14.67 21c.15-.32.22-.66.22-1.01h7.08z" fill="url(#product-icon-checkout-SiteMenu-b)" element-id="3319"></path>
+                                                <defs element-id="3318">
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-a" x1="16.01" y1="35.59" x2="16.01" y2="21.16" gradientUnits="userSpaceOnUse" element-id="3317">
+                                                      <stop stop-color="#21CFE0" element-id="3316"></stop>
+                                                      <stop offset=".17" stop-color="#20D1E0" element-id="3315"></stop>
+                                                      <stop offset=".38" stop-color="#18E2E2" element-id="3314"></stop>
+                                                      <stop offset=".61" stop-color="#13ECE3" element-id="3313"></stop>
+                                                      <stop offset="1" stop-color="#11EFE3" element-id="3312"></stop>
+                                                   </linearGradient>
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-b" x1="21.07" y1="43" x2="21.07" y2="14.5" gradientUnits="userSpaceOnUse" element-id="3311">
+                                                      <stop stop-color="#0048E5" element-id="3310"></stop>
+                                                      <stop offset="1" stop-color="#9B66FF" element-id="3309"></stop>
+                                                   </linearGradient>
+                                                </defs>
+                                             </svg>
+                                          </span>
+                                          <span element-id="2">
+                                             <h4 element-id="1" class="homeHoverTabh4">Payment</h4>
+                                             <p element-id="0" class="homeHoverTabPara">Online Payments</p>
+                                          </span>
+                                       </section>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="tab-pane" id="tab-3">
+                                 <div class="row" element-id="2" style="
+                                    margin: 0px;
+                                    padding-left: 20px;
+                                    padding-right: 20px;
+                                    ">
+                                    <div class="col-6" element-id="1">
+                                       <section element-id="1" class="d-flex" style="
+                                          display: flex;
+                                          gap: 10px;
+                                          margin-bottom: 11px;
+                                          ">
+                                          <span element-id="0">
+                                             <svg class="ProductIcon " width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" element-id="3323">
+                                                <title element-id="3322">Checkout</title>
+                                                <path d="M31.54 4h-19.7c-.84 0-1.63.43-2.09 1.14a2.52 2.52 0 0 0-.18 2.39l5.1 11.46c.3.64.3 1.38 0 2.02L8 36h23.54c.97 0 1.86-.58 2.26-1.48l5.98-13.5c.3-.65.3-1.39 0-2.04L33.8 5.48A2.48 2.48 0 0 0 31.54 4z" fill="#96F" element-id="3321"></path>
+                                                <path d="M7.23 36a2.3 2.3 0 0 1-.98-.22h.04a2.43 2.43 0 0 1-1.23-1.23L.22 23.53a2.54 2.54 0 0 1 .17-2.38A2.45 2.45 0 0 1 2.46 20h19.5c.97 0 1.84.57 2.23 1.46l4.8 10.85.68 1.53c.1.22.23.42.38.6.49.64 1.2 1.3 1.98 1.51-.11.03-.3.05-.55.05H7.22z" fill="url(#product-icon-checkout-SiteMenu-a)" element-id="3320"></path>
+                                                <path d="M21.97 20c.9 0 1.72.5 2.14 1.3l.08.16 4.8 10.85.68 1.53a4.43 4.43 0 0 0 2.3 2.01l.18.07c-.2.05-.4.08-.61.08H8L14.67 21c.15-.32.22-.66.22-1.01h7.08z" fill="url(#product-icon-checkout-SiteMenu-b)" element-id="3319"></path>
+                                                <defs element-id="3318">
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-a" x1="16.01" y1="35.59" x2="16.01" y2="21.16" gradientUnits="userSpaceOnUse" element-id="3317">
+                                                      <stop stop-color="#21CFE0" element-id="3316"></stop>
+                                                      <stop offset=".17" stop-color="#20D1E0" element-id="3315"></stop>
+                                                      <stop offset=".38" stop-color="#18E2E2" element-id="3314"></stop>
+                                                      <stop offset=".61" stop-color="#13ECE3" element-id="3313"></stop>
+                                                      <stop offset="1" stop-color="#11EFE3" element-id="3312"></stop>
+                                                   </linearGradient>
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-b" x1="21.07" y1="43" x2="21.07" y2="14.5" gradientUnits="userSpaceOnUse" element-id="3311">
+                                                      <stop stop-color="#0048E5" element-id="3310"></stop>
+                                                      <stop offset="1" stop-color="#9B66FF" element-id="3309"></stop>
+                                                   </linearGradient>
+                                                </defs>
+                                             </svg>
+                                          </span>
+                                          <span element-id="2">
+                                             <h4 element-id="1" class="homeHoverTabh4">Payment</h4>
+                                             <p element-id="0" class="homeHoverTabPara">Online Payments</p>
+                                          </span>
+                                       </section>
+                                       <section element-id="1" class="d-flex" style="
+                                          display: flex;
+                                          gap: 10px;
+                                          margin-bottom: 11px;
+                                          ">
+                                          <span element-id="0">
+                                             <svg class="ProductIcon " width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" element-id="3323">
+                                                <title element-id="3322">Checkout</title>
+                                                <path d="M31.54 4h-19.7c-.84 0-1.63.43-2.09 1.14a2.52 2.52 0 0 0-.18 2.39l5.1 11.46c.3.64.3 1.38 0 2.02L8 36h23.54c.97 0 1.86-.58 2.26-1.48l5.98-13.5c.3-.65.3-1.39 0-2.04L33.8 5.48A2.48 2.48 0 0 0 31.54 4z" fill="#96F" element-id="3321"></path>
+                                                <path d="M7.23 36a2.3 2.3 0 0 1-.98-.22h.04a2.43 2.43 0 0 1-1.23-1.23L.22 23.53a2.54 2.54 0 0 1 .17-2.38A2.45 2.45 0 0 1 2.46 20h19.5c.97 0 1.84.57 2.23 1.46l4.8 10.85.68 1.53c.1.22.23.42.38.6.49.64 1.2 1.3 1.98 1.51-.11.03-.3.05-.55.05H7.22z" fill="url(#product-icon-checkout-SiteMenu-a)" element-id="3320"></path>
+                                                <path d="M21.97 20c.9 0 1.72.5 2.14 1.3l.08.16 4.8 10.85.68 1.53a4.43 4.43 0 0 0 2.3 2.01l.18.07c-.2.05-.4.08-.61.08H8L14.67 21c.15-.32.22-.66.22-1.01h7.08z" fill="url(#product-icon-checkout-SiteMenu-b)" element-id="3319"></path>
+                                                <defs element-id="3318">
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-a" x1="16.01" y1="35.59" x2="16.01" y2="21.16" gradientUnits="userSpaceOnUse" element-id="3317">
+                                                      <stop stop-color="#21CFE0" element-id="3316"></stop>
+                                                      <stop offset=".17" stop-color="#20D1E0" element-id="3315"></stop>
+                                                      <stop offset=".38" stop-color="#18E2E2" element-id="3314"></stop>
+                                                      <stop offset=".61" stop-color="#13ECE3" element-id="3313"></stop>
+                                                      <stop offset="1" stop-color="#11EFE3" element-id="3312"></stop>
+                                                   </linearGradient>
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-b" x1="21.07" y1="43" x2="21.07" y2="14.5" gradientUnits="userSpaceOnUse" element-id="3311">
+                                                      <stop stop-color="#0048E5" element-id="3310"></stop>
+                                                      <stop offset="1" stop-color="#9B66FF" element-id="3309"></stop>
+                                                   </linearGradient>
+                                                </defs>
+                                             </svg>
+                                          </span>
+                                          <span element-id="2">
+                                             <h4 element-id="1" class="homeHoverTabh4">Payment</h4>
+                                             <p element-id="0" class="homeHoverTabPara">Online Payments</p>
+                                          </span>
+                                       </section>
+                                       <section element-id="1" class="d-flex" style="
+                                          display: flex;
+                                          gap: 10px;
+                                          margin-bottom: 11px;
+                                          ">
+                                          <span element-id="0">
+                                             <svg class="ProductIcon " width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" element-id="3323">
+                                                <title element-id="3322">Checkout</title>
+                                                <path d="M31.54 4h-19.7c-.84 0-1.63.43-2.09 1.14a2.52 2.52 0 0 0-.18 2.39l5.1 11.46c.3.64.3 1.38 0 2.02L8 36h23.54c.97 0 1.86-.58 2.26-1.48l5.98-13.5c.3-.65.3-1.39 0-2.04L33.8 5.48A2.48 2.48 0 0 0 31.54 4z" fill="#96F" element-id="3321"></path>
+                                                <path d="M7.23 36a2.3 2.3 0 0 1-.98-.22h.04a2.43 2.43 0 0 1-1.23-1.23L.22 23.53a2.54 2.54 0 0 1 .17-2.38A2.45 2.45 0 0 1 2.46 20h19.5c.97 0 1.84.57 2.23 1.46l4.8 10.85.68 1.53c.1.22.23.42.38.6.49.64 1.2 1.3 1.98 1.51-.11.03-.3.05-.55.05H7.22z" fill="url(#product-icon-checkout-SiteMenu-a)" element-id="3320"></path>
+                                                <path d="M21.97 20c.9 0 1.72.5 2.14 1.3l.08.16 4.8 10.85.68 1.53a4.43 4.43 0 0 0 2.3 2.01l.18.07c-.2.05-.4.08-.61.08H8L14.67 21c.15-.32.22-.66.22-1.01h7.08z" fill="url(#product-icon-checkout-SiteMenu-b)" element-id="3319"></path>
+                                                <defs element-id="3318">
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-a" x1="16.01" y1="35.59" x2="16.01" y2="21.16" gradientUnits="userSpaceOnUse" element-id="3317">
+                                                      <stop stop-color="#21CFE0" element-id="3316"></stop>
+                                                      <stop offset=".17" stop-color="#20D1E0" element-id="3315"></stop>
+                                                      <stop offset=".38" stop-color="#18E2E2" element-id="3314"></stop>
+                                                      <stop offset=".61" stop-color="#13ECE3" element-id="3313"></stop>
+                                                      <stop offset="1" stop-color="#11EFE3" element-id="3312"></stop>
+                                                   </linearGradient>
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-b" x1="21.07" y1="43" x2="21.07" y2="14.5" gradientUnits="userSpaceOnUse" element-id="3311">
+                                                      <stop stop-color="#0048E5" element-id="3310"></stop>
+                                                      <stop offset="1" stop-color="#9B66FF" element-id="3309"></stop>
+                                                   </linearGradient>
+                                                </defs>
+                                             </svg>
+                                          </span>
+                                          <span element-id="2">
+                                             <h4 element-id="1" class="homeHoverTabh4">Payment</h4>
+                                             <p element-id="0" class="homeHoverTabPara">Online Payments</p>
+                                          </span>
+                                       </section>
+                                       <section element-id="1" class="d-flex" style="
+                                          display: flex;
+                                          gap: 10px;
+                                          margin-bottom: 11px;
+                                          ">
+                                          <span element-id="0">
+                                             <svg class="ProductIcon " width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" element-id="3323">
+                                                <title element-id="3322">Checkout</title>
+                                                <path d="M31.54 4h-19.7c-.84 0-1.63.43-2.09 1.14a2.52 2.52 0 0 0-.18 2.39l5.1 11.46c.3.64.3 1.38 0 2.02L8 36h23.54c.97 0 1.86-.58 2.26-1.48l5.98-13.5c.3-.65.3-1.39 0-2.04L33.8 5.48A2.48 2.48 0 0 0 31.54 4z" fill="#96F" element-id="3321"></path>
+                                                <path d="M7.23 36a2.3 2.3 0 0 1-.98-.22h.04a2.43 2.43 0 0 1-1.23-1.23L.22 23.53a2.54 2.54 0 0 1 .17-2.38A2.45 2.45 0 0 1 2.46 20h19.5c.97 0 1.84.57 2.23 1.46l4.8 10.85.68 1.53c.1.22.23.42.38.6.49.64 1.2 1.3 1.98 1.51-.11.03-.3.05-.55.05H7.22z" fill="url(#product-icon-checkout-SiteMenu-a)" element-id="3320"></path>
+                                                <path d="M21.97 20c.9 0 1.72.5 2.14 1.3l.08.16 4.8 10.85.68 1.53a4.43 4.43 0 0 0 2.3 2.01l.18.07c-.2.05-.4.08-.61.08H8L14.67 21c.15-.32.22-.66.22-1.01h7.08z" fill="url(#product-icon-checkout-SiteMenu-b)" element-id="3319"></path>
+                                                <defs element-id="3318">
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-a" x1="16.01" y1="35.59" x2="16.01" y2="21.16" gradientUnits="userSpaceOnUse" element-id="3317">
+                                                      <stop stop-color="#21CFE0" element-id="3316"></stop>
+                                                      <stop offset=".17" stop-color="#20D1E0" element-id="3315"></stop>
+                                                      <stop offset=".38" stop-color="#18E2E2" element-id="3314"></stop>
+                                                      <stop offset=".61" stop-color="#13ECE3" element-id="3313"></stop>
+                                                      <stop offset="1" stop-color="#11EFE3" element-id="3312"></stop>
+                                                   </linearGradient>
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-b" x1="21.07" y1="43" x2="21.07" y2="14.5" gradientUnits="userSpaceOnUse" element-id="3311">
+                                                      <stop stop-color="#0048E5" element-id="3310"></stop>
+                                                      <stop offset="1" stop-color="#9B66FF" element-id="3309"></stop>
+                                                   </linearGradient>
+                                                </defs>
+                                             </svg>
+                                          </span>
+                                          <span element-id="2">
+                                             <h4 element-id="1" class="homeHoverTabh4">Payment</h4>
+                                             <p element-id="0" class="homeHoverTabPara">Online Payments</p>
+                                          </span>
+                                       </section>
+                                       <section element-id="1" class="d-flex" style="
+                                          display: flex;
+                                          gap: 10px;
+                                          margin-bottom: 11px;
+                                          ">
+                                          <span element-id="0">
+                                             <svg class="ProductIcon " width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" element-id="3323">
+                                                <title element-id="3322">Checkout</title>
+                                                <path d="M31.54 4h-19.7c-.84 0-1.63.43-2.09 1.14a2.52 2.52 0 0 0-.18 2.39l5.1 11.46c.3.64.3 1.38 0 2.02L8 36h23.54c.97 0 1.86-.58 2.26-1.48l5.98-13.5c.3-.65.3-1.39 0-2.04L33.8 5.48A2.48 2.48 0 0 0 31.54 4z" fill="#96F" element-id="3321"></path>
+                                                <path d="M7.23 36a2.3 2.3 0 0 1-.98-.22h.04a2.43 2.43 0 0 1-1.23-1.23L.22 23.53a2.54 2.54 0 0 1 .17-2.38A2.45 2.45 0 0 1 2.46 20h19.5c.97 0 1.84.57 2.23 1.46l4.8 10.85.68 1.53c.1.22.23.42.38.6.49.64 1.2 1.3 1.98 1.51-.11.03-.3.05-.55.05H7.22z" fill="url(#product-icon-checkout-SiteMenu-a)" element-id="3320"></path>
+                                                <path d="M21.97 20c.9 0 1.72.5 2.14 1.3l.08.16 4.8 10.85.68 1.53a4.43 4.43 0 0 0 2.3 2.01l.18.07c-.2.05-.4.08-.61.08H8L14.67 21c.15-.32.22-.66.22-1.01h7.08z" fill="url(#product-icon-checkout-SiteMenu-b)" element-id="3319"></path>
+                                                <defs element-id="3318">
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-a" x1="16.01" y1="35.59" x2="16.01" y2="21.16" gradientUnits="userSpaceOnUse" element-id="3317">
+                                                      <stop stop-color="#21CFE0" element-id="3316"></stop>
+                                                      <stop offset=".17" stop-color="#20D1E0" element-id="3315"></stop>
+                                                      <stop offset=".38" stop-color="#18E2E2" element-id="3314"></stop>
+                                                      <stop offset=".61" stop-color="#13ECE3" element-id="3313"></stop>
+                                                      <stop offset="1" stop-color="#11EFE3" element-id="3312"></stop>
+                                                   </linearGradient>
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-b" x1="21.07" y1="43" x2="21.07" y2="14.5" gradientUnits="userSpaceOnUse" element-id="3311">
+                                                      <stop stop-color="#0048E5" element-id="3310"></stop>
+                                                      <stop offset="1" stop-color="#9B66FF" element-id="3309"></stop>
+                                                   </linearGradient>
+                                                </defs>
+                                             </svg>
+                                          </span>
+                                          <span element-id="2">
+                                             <h4 element-id="1" class="homeHoverTabh4">Payment</h4>
+                                             <p element-id="0" class="homeHoverTabPara">Online Payments</p>
+                                          </span>
+                                       </section>
+                                       <section element-id="1" class="d-flex" style="
+                                          display: flex;
+                                          gap: 10px;
+                                          margin-bottom: 11px;
+                                          ">
+                                          <span element-id="0">
+                                             <svg class="ProductIcon " width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" element-id="3323">
+                                                <title element-id="3322">Checkout</title>
+                                                <path d="M31.54 4h-19.7c-.84 0-1.63.43-2.09 1.14a2.52 2.52 0 0 0-.18 2.39l5.1 11.46c.3.64.3 1.38 0 2.02L8 36h23.54c.97 0 1.86-.58 2.26-1.48l5.98-13.5c.3-.65.3-1.39 0-2.04L33.8 5.48A2.48 2.48 0 0 0 31.54 4z" fill="#96F" element-id="3321"></path>
+                                                <path d="M7.23 36a2.3 2.3 0 0 1-.98-.22h.04a2.43 2.43 0 0 1-1.23-1.23L.22 23.53a2.54 2.54 0 0 1 .17-2.38A2.45 2.45 0 0 1 2.46 20h19.5c.97 0 1.84.57 2.23 1.46l4.8 10.85.68 1.53c.1.22.23.42.38.6.49.64 1.2 1.3 1.98 1.51-.11.03-.3.05-.55.05H7.22z" fill="url(#product-icon-checkout-SiteMenu-a)" element-id="3320"></path>
+                                                <path d="M21.97 20c.9 0 1.72.5 2.14 1.3l.08.16 4.8 10.85.68 1.53a4.43 4.43 0 0 0 2.3 2.01l.18.07c-.2.05-.4.08-.61.08H8L14.67 21c.15-.32.22-.66.22-1.01h7.08z" fill="url(#product-icon-checkout-SiteMenu-b)" element-id="3319"></path>
+                                                <defs element-id="3318">
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-a" x1="16.01" y1="35.59" x2="16.01" y2="21.16" gradientUnits="userSpaceOnUse" element-id="3317">
+                                                      <stop stop-color="#21CFE0" element-id="3316"></stop>
+                                                      <stop offset=".17" stop-color="#20D1E0" element-id="3315"></stop>
+                                                      <stop offset=".38" stop-color="#18E2E2" element-id="3314"></stop>
+                                                      <stop offset=".61" stop-color="#13ECE3" element-id="3313"></stop>
+                                                      <stop offset="1" stop-color="#11EFE3" element-id="3312"></stop>
+                                                   </linearGradient>
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-b" x1="21.07" y1="43" x2="21.07" y2="14.5" gradientUnits="userSpaceOnUse" element-id="3311">
+                                                      <stop stop-color="#0048E5" element-id="3310"></stop>
+                                                      <stop offset="1" stop-color="#9B66FF" element-id="3309"></stop>
+                                                   </linearGradient>
+                                                </defs>
+                                             </svg>
+                                          </span>
+                                          <span element-id="2">
+                                             <h4 element-id="1" class="homeHoverTabh4">Payment</h4>
+                                             <p element-id="0" class="homeHoverTabPara">Online Payments</p>
+                                          </span>
+                                       </section>
+                                    </div>
+                                    <div class="col-6" element-id="1">
+                                       <section element-id="1" class="d-flex" style="
+                                          display: flex;
+                                          gap: 10px;
+                                          margin-bottom: 11px;
+                                          ">
+                                          <span element-id="0">
+                                             <svg class="ProductIcon " width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" element-id="3323">
+                                                <title element-id="3322">Checkout</title>
+                                                <path d="M31.54 4h-19.7c-.84 0-1.63.43-2.09 1.14a2.52 2.52 0 0 0-.18 2.39l5.1 11.46c.3.64.3 1.38 0 2.02L8 36h23.54c.97 0 1.86-.58 2.26-1.48l5.98-13.5c.3-.65.3-1.39 0-2.04L33.8 5.48A2.48 2.48 0 0 0 31.54 4z" fill="#96F" element-id="3321"></path>
+                                                <path d="M7.23 36a2.3 2.3 0 0 1-.98-.22h.04a2.43 2.43 0 0 1-1.23-1.23L.22 23.53a2.54 2.54 0 0 1 .17-2.38A2.45 2.45 0 0 1 2.46 20h19.5c.97 0 1.84.57 2.23 1.46l4.8 10.85.68 1.53c.1.22.23.42.38.6.49.64 1.2 1.3 1.98 1.51-.11.03-.3.05-.55.05H7.22z" fill="url(#product-icon-checkout-SiteMenu-a)" element-id="3320"></path>
+                                                <path d="M21.97 20c.9 0 1.72.5 2.14 1.3l.08.16 4.8 10.85.68 1.53a4.43 4.43 0 0 0 2.3 2.01l.18.07c-.2.05-.4.08-.61.08H8L14.67 21c.15-.32.22-.66.22-1.01h7.08z" fill="url(#product-icon-checkout-SiteMenu-b)" element-id="3319"></path>
+                                                <defs element-id="3318">
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-a" x1="16.01" y1="35.59" x2="16.01" y2="21.16" gradientUnits="userSpaceOnUse" element-id="3317">
+                                                      <stop stop-color="#21CFE0" element-id="3316"></stop>
+                                                      <stop offset=".17" stop-color="#20D1E0" element-id="3315"></stop>
+                                                      <stop offset=".38" stop-color="#18E2E2" element-id="3314"></stop>
+                                                      <stop offset=".61" stop-color="#13ECE3" element-id="3313"></stop>
+                                                      <stop offset="1" stop-color="#11EFE3" element-id="3312"></stop>
+                                                   </linearGradient>
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-b" x1="21.07" y1="43" x2="21.07" y2="14.5" gradientUnits="userSpaceOnUse" element-id="3311">
+                                                      <stop stop-color="#0048E5" element-id="3310"></stop>
+                                                      <stop offset="1" stop-color="#9B66FF" element-id="3309"></stop>
+                                                   </linearGradient>
+                                                </defs>
+                                             </svg>
+                                          </span>
+                                          <span element-id="2">
+                                             <h4 element-id="1" class="homeHoverTabh4">Payment</h4>
+                                             <p element-id="0" class="homeHoverTabPara">Online Payments</p>
+                                          </span>
+                                       </section>
+                                       <section element-id="1" class="d-flex" style="
+                                          display: flex;
+                                          gap: 10px;
+                                          margin-bottom: 11px;
+                                          ">
+                                          <span element-id="0">
+                                             <svg class="ProductIcon " width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" element-id="3323">
+                                                <title element-id="3322">Checkout</title>
+                                                <path d="M31.54 4h-19.7c-.84 0-1.63.43-2.09 1.14a2.52 2.52 0 0 0-.18 2.39l5.1 11.46c.3.64.3 1.38 0 2.02L8 36h23.54c.97 0 1.86-.58 2.26-1.48l5.98-13.5c.3-.65.3-1.39 0-2.04L33.8 5.48A2.48 2.48 0 0 0 31.54 4z" fill="#96F" element-id="3321"></path>
+                                                <path d="M7.23 36a2.3 2.3 0 0 1-.98-.22h.04a2.43 2.43 0 0 1-1.23-1.23L.22 23.53a2.54 2.54 0 0 1 .17-2.38A2.45 2.45 0 0 1 2.46 20h19.5c.97 0 1.84.57 2.23 1.46l4.8 10.85.68 1.53c.1.22.23.42.38.6.49.64 1.2 1.3 1.98 1.51-.11.03-.3.05-.55.05H7.22z" fill="url(#product-icon-checkout-SiteMenu-a)" element-id="3320"></path>
+                                                <path d="M21.97 20c.9 0 1.72.5 2.14 1.3l.08.16 4.8 10.85.68 1.53a4.43 4.43 0 0 0 2.3 2.01l.18.07c-.2.05-.4.08-.61.08H8L14.67 21c.15-.32.22-.66.22-1.01h7.08z" fill="url(#product-icon-checkout-SiteMenu-b)" element-id="3319"></path>
+                                                <defs element-id="3318">
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-a" x1="16.01" y1="35.59" x2="16.01" y2="21.16" gradientUnits="userSpaceOnUse" element-id="3317">
+                                                      <stop stop-color="#21CFE0" element-id="3316"></stop>
+                                                      <stop offset=".17" stop-color="#20D1E0" element-id="3315"></stop>
+                                                      <stop offset=".38" stop-color="#18E2E2" element-id="3314"></stop>
+                                                      <stop offset=".61" stop-color="#13ECE3" element-id="3313"></stop>
+                                                      <stop offset="1" stop-color="#11EFE3" element-id="3312"></stop>
+                                                   </linearGradient>
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-b" x1="21.07" y1="43" x2="21.07" y2="14.5" gradientUnits="userSpaceOnUse" element-id="3311">
+                                                      <stop stop-color="#0048E5" element-id="3310"></stop>
+                                                      <stop offset="1" stop-color="#9B66FF" element-id="3309"></stop>
+                                                   </linearGradient>
+                                                </defs>
+                                             </svg>
+                                          </span>
+                                          <span element-id="2">
+                                             <h4 element-id="1" class="homeHoverTabh4">Payment</h4>
+                                             <p element-id="0" class="homeHoverTabPara">Online Payments</p>
+                                          </span>
+                                       </section>
+                                       <section element-id="1" class="d-flex" style="
+                                          display: flex;
+                                          gap: 10px;
+                                          margin-bottom: 11px;
+                                          ">
+                                          <span element-id="0">
+                                             <svg class="ProductIcon " width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" element-id="3323">
+                                                <title element-id="3322">Checkout</title>
+                                                <path d="M31.54 4h-19.7c-.84 0-1.63.43-2.09 1.14a2.52 2.52 0 0 0-.18 2.39l5.1 11.46c.3.64.3 1.38 0 2.02L8 36h23.54c.97 0 1.86-.58 2.26-1.48l5.98-13.5c.3-.65.3-1.39 0-2.04L33.8 5.48A2.48 2.48 0 0 0 31.54 4z" fill="#96F" element-id="3321"></path>
+                                                <path d="M7.23 36a2.3 2.3 0 0 1-.98-.22h.04a2.43 2.43 0 0 1-1.23-1.23L.22 23.53a2.54 2.54 0 0 1 .17-2.38A2.45 2.45 0 0 1 2.46 20h19.5c.97 0 1.84.57 2.23 1.46l4.8 10.85.68 1.53c.1.22.23.42.38.6.49.64 1.2 1.3 1.98 1.51-.11.03-.3.05-.55.05H7.22z" fill="url(#product-icon-checkout-SiteMenu-a)" element-id="3320"></path>
+                                                <path d="M21.97 20c.9 0 1.72.5 2.14 1.3l.08.16 4.8 10.85.68 1.53a4.43 4.43 0 0 0 2.3 2.01l.18.07c-.2.05-.4.08-.61.08H8L14.67 21c.15-.32.22-.66.22-1.01h7.08z" fill="url(#product-icon-checkout-SiteMenu-b)" element-id="3319"></path>
+                                                <defs element-id="3318">
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-a" x1="16.01" y1="35.59" x2="16.01" y2="21.16" gradientUnits="userSpaceOnUse" element-id="3317">
+                                                      <stop stop-color="#21CFE0" element-id="3316"></stop>
+                                                      <stop offset=".17" stop-color="#20D1E0" element-id="3315"></stop>
+                                                      <stop offset=".38" stop-color="#18E2E2" element-id="3314"></stop>
+                                                      <stop offset=".61" stop-color="#13ECE3" element-id="3313"></stop>
+                                                      <stop offset="1" stop-color="#11EFE3" element-id="3312"></stop>
+                                                   </linearGradient>
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-b" x1="21.07" y1="43" x2="21.07" y2="14.5" gradientUnits="userSpaceOnUse" element-id="3311">
+                                                      <stop stop-color="#0048E5" element-id="3310"></stop>
+                                                      <stop offset="1" stop-color="#9B66FF" element-id="3309"></stop>
+                                                   </linearGradient>
+                                                </defs>
+                                             </svg>
+                                          </span>
+                                          <span element-id="2">
+                                             <h4 element-id="1" class="homeHoverTabh4">Payment</h4>
+                                             <p element-id="0" class="homeHoverTabPara">Online Payments</p>
+                                          </span>
+                                       </section>
+                                       <section element-id="1" class="d-flex" style="
+                                          display: flex;
+                                          gap: 10px;
+                                          margin-bottom: 11px;
+                                          ">
+                                          <span element-id="0">
+                                             <svg class="ProductIcon " width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" element-id="3323">
+                                                <title element-id="3322">Checkout</title>
+                                                <path d="M31.54 4h-19.7c-.84 0-1.63.43-2.09 1.14a2.52 2.52 0 0 0-.18 2.39l5.1 11.46c.3.64.3 1.38 0 2.02L8 36h23.54c.97 0 1.86-.58 2.26-1.48l5.98-13.5c.3-.65.3-1.39 0-2.04L33.8 5.48A2.48 2.48 0 0 0 31.54 4z" fill="#96F" element-id="3321"></path>
+                                                <path d="M7.23 36a2.3 2.3 0 0 1-.98-.22h.04a2.43 2.43 0 0 1-1.23-1.23L.22 23.53a2.54 2.54 0 0 1 .17-2.38A2.45 2.45 0 0 1 2.46 20h19.5c.97 0 1.84.57 2.23 1.46l4.8 10.85.68 1.53c.1.22.23.42.38.6.49.64 1.2 1.3 1.98 1.51-.11.03-.3.05-.55.05H7.22z" fill="url(#product-icon-checkout-SiteMenu-a)" element-id="3320"></path>
+                                                <path d="M21.97 20c.9 0 1.72.5 2.14 1.3l.08.16 4.8 10.85.68 1.53a4.43 4.43 0 0 0 2.3 2.01l.18.07c-.2.05-.4.08-.61.08H8L14.67 21c.15-.32.22-.66.22-1.01h7.08z" fill="url(#product-icon-checkout-SiteMenu-b)" element-id="3319"></path>
+                                                <defs element-id="3318">
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-a" x1="16.01" y1="35.59" x2="16.01" y2="21.16" gradientUnits="userSpaceOnUse" element-id="3317">
+                                                      <stop stop-color="#21CFE0" element-id="3316"></stop>
+                                                      <stop offset=".17" stop-color="#20D1E0" element-id="3315"></stop>
+                                                      <stop offset=".38" stop-color="#18E2E2" element-id="3314"></stop>
+                                                      <stop offset=".61" stop-color="#13ECE3" element-id="3313"></stop>
+                                                      <stop offset="1" stop-color="#11EFE3" element-id="3312"></stop>
+                                                   </linearGradient>
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-b" x1="21.07" y1="43" x2="21.07" y2="14.5" gradientUnits="userSpaceOnUse" element-id="3311">
+                                                      <stop stop-color="#0048E5" element-id="3310"></stop>
+                                                      <stop offset="1" stop-color="#9B66FF" element-id="3309"></stop>
+                                                   </linearGradient>
+                                                </defs>
+                                             </svg>
+                                          </span>
+                                          <span element-id="2">
+                                             <h4 element-id="1" class="homeHoverTabh4">Payment</h4>
+                                             <p element-id="0" class="homeHoverTabPara">Online Payments</p>
+                                          </span>
+                                       </section>
+                                       <section element-id="1" class="d-flex" style="
+                                          display: flex;
+                                          gap: 10px;
+                                          margin-bottom: 11px;
+                                          ">
+                                          <span element-id="0">
+                                             <svg class="ProductIcon " width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" element-id="3323">
+                                                <title element-id="3322">Checkout</title>
+                                                <path d="M31.54 4h-19.7c-.84 0-1.63.43-2.09 1.14a2.52 2.52 0 0 0-.18 2.39l5.1 11.46c.3.64.3 1.38 0 2.02L8 36h23.54c.97 0 1.86-.58 2.26-1.48l5.98-13.5c.3-.65.3-1.39 0-2.04L33.8 5.48A2.48 2.48 0 0 0 31.54 4z" fill="#96F" element-id="3321"></path>
+                                                <path d="M7.23 36a2.3 2.3 0 0 1-.98-.22h.04a2.43 2.43 0 0 1-1.23-1.23L.22 23.53a2.54 2.54 0 0 1 .17-2.38A2.45 2.45 0 0 1 2.46 20h19.5c.97 0 1.84.57 2.23 1.46l4.8 10.85.68 1.53c.1.22.23.42.38.6.49.64 1.2 1.3 1.98 1.51-.11.03-.3.05-.55.05H7.22z" fill="url(#product-icon-checkout-SiteMenu-a)" element-id="3320"></path>
+                                                <path d="M21.97 20c.9 0 1.72.5 2.14 1.3l.08.16 4.8 10.85.68 1.53a4.43 4.43 0 0 0 2.3 2.01l.18.07c-.2.05-.4.08-.61.08H8L14.67 21c.15-.32.22-.66.22-1.01h7.08z" fill="url(#product-icon-checkout-SiteMenu-b)" element-id="3319"></path>
+                                                <defs element-id="3318">
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-a" x1="16.01" y1="35.59" x2="16.01" y2="21.16" gradientUnits="userSpaceOnUse" element-id="3317">
+                                                      <stop stop-color="#21CFE0" element-id="3316"></stop>
+                                                      <stop offset=".17" stop-color="#20D1E0" element-id="3315"></stop>
+                                                      <stop offset=".38" stop-color="#18E2E2" element-id="3314"></stop>
+                                                      <stop offset=".61" stop-color="#13ECE3" element-id="3313"></stop>
+                                                      <stop offset="1" stop-color="#11EFE3" element-id="3312"></stop>
+                                                   </linearGradient>
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-b" x1="21.07" y1="43" x2="21.07" y2="14.5" gradientUnits="userSpaceOnUse" element-id="3311">
+                                                      <stop stop-color="#0048E5" element-id="3310"></stop>
+                                                      <stop offset="1" stop-color="#9B66FF" element-id="3309"></stop>
+                                                   </linearGradient>
+                                                </defs>
+                                             </svg>
+                                          </span>
+                                          <span element-id="2">
+                                             <h4 element-id="1" class="homeHoverTabh4">Payment</h4>
+                                             <p element-id="0" class="homeHoverTabPara">Online Payments</p>
+                                          </span>
+                                       </section>
+                                       <section element-id="1" class="d-flex" style="
+                                          display: flex;
+                                          gap: 10px;
+                                          margin-bottom: 11px;
+                                          ">
+                                          <span element-id="0">
+                                             <svg class="ProductIcon " width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" element-id="3323">
+                                                <title element-id="3322">Checkout</title>
+                                                <path d="M31.54 4h-19.7c-.84 0-1.63.43-2.09 1.14a2.52 2.52 0 0 0-.18 2.39l5.1 11.46c.3.64.3 1.38 0 2.02L8 36h23.54c.97 0 1.86-.58 2.26-1.48l5.98-13.5c.3-.65.3-1.39 0-2.04L33.8 5.48A2.48 2.48 0 0 0 31.54 4z" fill="#96F" element-id="3321"></path>
+                                                <path d="M7.23 36a2.3 2.3 0 0 1-.98-.22h.04a2.43 2.43 0 0 1-1.23-1.23L.22 23.53a2.54 2.54 0 0 1 .17-2.38A2.45 2.45 0 0 1 2.46 20h19.5c.97 0 1.84.57 2.23 1.46l4.8 10.85.68 1.53c.1.22.23.42.38.6.49.64 1.2 1.3 1.98 1.51-.11.03-.3.05-.55.05H7.22z" fill="url(#product-icon-checkout-SiteMenu-a)" element-id="3320"></path>
+                                                <path d="M21.97 20c.9 0 1.72.5 2.14 1.3l.08.16 4.8 10.85.68 1.53a4.43 4.43 0 0 0 2.3 2.01l.18.07c-.2.05-.4.08-.61.08H8L14.67 21c.15-.32.22-.66.22-1.01h7.08z" fill="url(#product-icon-checkout-SiteMenu-b)" element-id="3319"></path>
+                                                <defs element-id="3318">
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-a" x1="16.01" y1="35.59" x2="16.01" y2="21.16" gradientUnits="userSpaceOnUse" element-id="3317">
+                                                      <stop stop-color="#21CFE0" element-id="3316"></stop>
+                                                      <stop offset=".17" stop-color="#20D1E0" element-id="3315"></stop>
+                                                      <stop offset=".38" stop-color="#18E2E2" element-id="3314"></stop>
+                                                      <stop offset=".61" stop-color="#13ECE3" element-id="3313"></stop>
+                                                      <stop offset="1" stop-color="#11EFE3" element-id="3312"></stop>
+                                                   </linearGradient>
+                                                   <linearGradient id="product-icon-checkout-SiteMenu-b" x1="21.07" y1="43" x2="21.07" y2="14.5" gradientUnits="userSpaceOnUse" element-id="3311">
+                                                      <stop stop-color="#0048E5" element-id="3310"></stop>
+                                                      <stop offset="1" stop-color="#9B66FF" element-id="3309"></stop>
+                                                   </linearGradient>
+                                                </defs>
+                                             </svg>
+                                          </span>
+                                          <span element-id="2">
+                                             <h4 element-id="1" class="homeHoverTabh4">Payment</h4>
+                                             <p element-id="0" class="homeHoverTabPara">Online Payments</p>
+                                          </span>
+                                       </section>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </section>
+                  </div>
+               </div>
+               <div id="use-cases">
+                  <ul class="subMenu__items">
+                     <li class="subMenu--item">
+                        <img class="icon--production" src="./images/saas.svg" alt="" />
+                        <span class="label__container">
+                           <div class="label">
+                              SaaS
+                              <img
+                                 class="right--arrow"
+                                 src="./images/right-arrow.svg"
+                                 alt=""
+                                 />
+                           </div>
+                           <div class="label--desc">
+                              Manage recurring bills and subscriptions
+                           </div>
+                        </span>
+                     </li>
+                     <li class="subMenu--item">
+                        <img
+                           class="icon--production"
+                           src="./images/marketplace.svg"
+                           alt=""
+                           />
+                        <span class="label__container">
+                           <div class="label">
+                              Marketplaces
+                              <img
+                                 class="right--arrow"
+                                 src="./images/right-arrow.svg"
+                                 alt=""
+                                 />
+                           </div>
+                           <div class="label--desc">
+                              Pay out globally and facilitate multi-party payments
+                           </div>
+                        </span>
+                     </li>
+                     <li class="subMenu--item">
+                        <img
+                           class="icon--production"
+                           src="./images/platform.svg"
+                           alt=""
+                           />
+                        <span class="label__container">
+                           <div class="label">
+                              Platform
+                              <img
+                                 class="right--arrow"
+                                 src="./images/right-arrow.svg"
+                                 alt=""
+                                 />
+                           </div>
+                           <div class="label--desc">
+                              Let customers accept payments within your platform
+                           </div>
+                        </span>
+                     </li>
+                  </ul>
+               </div>
+               <div id="developers">
+                  <div class="subMenu--item item--one">
+                     <img
+                        class="icon--production"
+                        src="./images/documentation.svg"
+                        alt=""
+                        />
+                     <span class="label__container">
+                        <div class="label">
+                           Documentation
+                           <img
+                              class="right--arrow"
+                              src="./images/right-arrow.svg"
+                              alt=""
+                              />
+                        </div>
+                        <div class="label--desc">
+                           Start integrating stripe's products and tools
+                        </div>
+                     </span>
+                  </div>
+                  <div class="sec__links--container">
+                     <h4 class="sec__title">GET STARTED</h4>
+                     <ul class="sec__links">
+                        <li class="sec__link">Prebuilt checkout</li>
+                        <li class="sec__link">Liberaries and SDKs</li>
+                        <li class="sec__link">Plugins</li>
+                        <li class="sec__link">Code samples</li>
+                     </ul>
+                  </div>
+                  <div class="sec__links--container">
+                     <h4 class="sec__title">GET STARTED</h4>
+                     <ul class="sec__links">
+                        <li class="sec__link">Accept online payments</li>
+                        <li class="sec__link">Manage subscriptions</li>
+                        <li class="sec__link">Send payments</li>
+                        <li class="sec__link">Set up in-person payments</li>
+                     </ul>
+                  </div>
+                  <ul class="subMenu__items sec--menu">
+                     <li class="subMenu--item">
+                        <img src="./images/reference.svg" alt="" />
+                        <span class="label__container">
+                           <div class="label">
+                              Full API reference
+                              <img
+                                 class="right--arrow"
+                                 src="./images/right-arrow.svg"
+                                 alt=""
+                                 />
+                           </div>
+                        </span>
+                     </li>
+                     <li class="subMenu--item">
+                        <img src="./images/support.svg" alt="" />
+                        <span class="label__container">
+                           <div class="label">
+                              Support
+                              <img
+                                 class="right--arrow"
+                                 src="./images/right-arrow.svg"
+                                 alt=""
+                                 />
+                           </div>
+                        </span>
+                     </li>
+                  </ul>
+                  <ul class="subMenu__items sec--menu">
+                     <li class="subMenu--item">
+                        <img src="./images/status.svg" alt="" />
+                        <span class="label__container">
+                           <div class="label">
+                              API status
+                              <img
+                                 class="right--arrow"
+                                 src="./images/right-arrow.svg"
+                                 alt=""
+                                 />
+                           </div>
+                        </span>
+                     </li>
+                     <li class="subMenu--item">
+                        <img src="./images/changelog.svg" alt="" />
+                        <span class="label__container">
+                           <div class="label">
+                              Changelog
+                              <img
+                                 class="right--arrow"
+                                 src="./images/right-arrow.svg"
+                                 alt=""
+                                 />
+                           </div>
+                        </span>
+                     </li>
+                  </ul>
+               </div>
+               <div id="company">
+                  <ul class="subMenu__items sec--menu">
+                     <li class="subMenu--item">
+                        <img src="./images/about.svg" alt="" />
+                        <span class="label__container">
+                           <div class="label">
+                              About stripe
+                              <img
+                                 class="right--arrow"
+                                 src="./images/right-arrow.svg"
+                                 alt=""
+                                 />
+                           </div>
+                        </span>
+                     </li>
+                     <li class="subMenu--item">
+                        <img src="./images/customers.svg" alt="" />
+                        <span class="label__container">
+                           <div class="label">
+                              Customers
+                              <img
+                                 class="right--arrow"
+                                 src="./images/right-arrow.svg"
+                                 alt=""
+                                 />
+                           </div>
+                        </span>
+                     </li>
+                     <li class="subMenu--item">
+                        <img src="./images/enterprise.svg" alt="" />
+                        <span class="label__container">
+                           <div class="label">
+                              Enterprise
+                              <img
+                                 class="right--arrow"
+                                 src="./images/right-arrow.svg"
+                                 alt=""
+                                 />
+                           </div>
+                        </span>
+                     </li>
+                  </ul>
+                  <ul class="subMenu__items sec--menu">
+                     <li class="subMenu--item">
+                        <img src="./images/jobs.svg" alt="" />
+                        <span class="label__container">
+                           <div class="label">
+                              Jobs
+                              <img
+                                 class="right--arrow"
+                                 src="./images/right-arrow.svg"
+                                 alt=""
+                                 />
+                           </div>
+                        </span>
+                     </li>
+                     <li class="subMenu--item">
+                        <img src="./images/newsroom.svg" alt="" />
+                        <span class="label__container">
+                           <div class="label">
+                              Newsroom
+                              <img
+                                 class="right--arrow"
+                                 src="./images/right-arrow.svg"
+                                 alt=""
+                                 />
+                           </div>
+                        </span>
+                     </li>
+                     <li class="subMenu--item">
+                        <img src="./images/partners.svg" alt="" />
+                        <span class="label__container">
+                           <div class="label">
+                              Partners
+                              <img
+                                 class="right--arrow"
+                                 src="./images/right-arrow.svg"
+                                 alt=""
+                                 />
+                           </div>
+                        </span>
+                     </li>
+                  </ul>
+                  <div class="more__info">
+                     <h4 class="sec__title">From the blog</h4>
+                     <div class="more__links">
+                        <a href="#">European payment methods available worldwide</a>
+                        <a href="#">We built Checkout so you don't have to</a>
+                        <a href="#">To design and develop an interactive globe</a>
+                     </div>
+                  </div>
+               </div>
+               <div id="company">
+                  <ul class="subMenu__items sec--menu">
+                     <li class="subMenu--item">
+                        <img src="./images/about.svg" alt="" />
+                        <span class="label__container">
+                           <div class="label">
+                              About stripe
+                              <img
+                                 class="right--arrow"
+                                 src="./images/right-arrow.svg"
+                                 alt=""
+                                 />
+                           </div>
+                        </span>
+                     </li>
+                     <li class="subMenu--item">
+                        <img src="./images/customers.svg" alt="" />
+                        <span class="label__container">
+                           <div class="label">
+                              Customers
+                              <img
+                                 class="right--arrow"
+                                 src="./images/right-arrow.svg"
+                                 alt=""
+                                 />
+                           </div>
+                        </span>
+                     </li>
+                     <li class="subMenu--item">
+                        <img src="./images/enterprise.svg" alt="" />
+                        <span class="label__container">
+                           <div class="label">
+                              Enterprise
+                              <img
+                                 class="right--arrow"
+                                 src="./images/right-arrow.svg"
+                                 alt=""
+                                 />
+                           </div>
+                        </span>
+                     </li>
+                  </ul>
+                  <ul class="subMenu__items sec--menu">
+                     <li class="subMenu--item">
+                        <img src="./images/jobs.svg" alt="" />
+                        <span class="label__container">
+                           <div class="label">
+                              Jobs
+                              <img
+                                 class="right--arrow"
+                                 src="./images/right-arrow.svg"
+                                 alt=""
+                                 />
+                           </div>
+                        </span>
+                     </li>
+                     <li class="subMenu--item">
+                        <img src="./images/newsroom.svg" alt="" />
+                        <span class="label__container">
+                           <div class="label">
+                              Newsroom
+                              <img
+                                 class="right--arrow"
+                                 src="./images/right-arrow.svg"
+                                 alt=""
+                                 />
+                           </div>
+                        </span>
+                     </li>
+                     <li class="subMenu--item">
+                        <img src="./images/partners.svg" alt="" />
+                        <span class="label__container">
+                           <div class="label">
+                              Partners
+                              <img
+                                 class="right--arrow"
+                                 src="./images/right-arrow.svg"
+                                 alt=""
+                                 />
+                           </div>
+                        </span>
+                     </li>
+                  </ul>
+                  <div class="more__info">
+                     <h4 class="sec__title">From the blog</h4>
+                     <div class="more__links">
+                        <a href="#">European payment methods available worldwide</a>
+                        <a href="#">We built Checkout so you don't have to</a>
+                        <a href="#">To design and develop an interactive globe</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+      </header>
+      <main>
+         <!-- hero section -->
+         <section class="hero-section" element-id="14">
+            <div class="container" element-id="0">
+            <div class="row" element-id="13">
+               <div class="col-5 heroSecColInner" element-id="12">
+                  <h4 class="heroSecColInnerh4" element-id="11">Lorem ipsum dolor sit consectet</h4>
+                  <h1 class="heroSecColInnerh1" element-id="10">The Easy Way to manage recruitment compliance</h1>
+                  <p class="heroSecColInnerpara" element-id="9">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime repellendus ab, non aperiam eaque eum nihil ad dolore hic veritatis, ipsam totam commodi eveniet, quaerat accusantium nesciunt ullam et id!</p>
+                  <section class="d-flex btnParent mt-4" element-id="8">
+                     <button class="btn btn info" element-id="7">Get In Touch</button>
+                     <button class="btn btn info" element-id="6">Start Now</button>
+                  </section>
+               </div>
+               <div class="col-7 pt-4">
+                  <!-- Slider container -->
+                  <div class="slider">
+                     <!-- slide 1 -->
+                     <div class="slide">
+                        <img src="images/laptop bg remove.png" alt="" />
+                     </div>
+                     <!-- slide 2 -->
+                     <div class="slide">
+                        <img src="images/laptop_black-removebg-preview.png" alt="" />
+                     </div>
+                     <!-- Control buttons -->
+                     <button class="btn btn-next arrowBtn" element-id="7">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000" height="25px" width="25px" version="1.1" id="Layer_1" viewBox="0 0 330 330" xml:space="preserve" style="
+                           fill: white;
+                           transform: rotate(176deg);
+                           ">
+                           <path id="XMLID_92_" d="M111.213,165.004L250.607,25.607c5.858-5.858,5.858-15.355,0-21.213c-5.858-5.858-15.355-5.858-21.213,0.001  l-150,150.004C76.58,157.211,75,161.026,75,165.004c0,3.979,1.581,7.794,4.394,10.607l150,149.996  C232.322,328.536,236.161,330,240,330s7.678-1.464,10.607-4.394c5.858-5.858,5.858-15.355,0-21.213L111.213,165.004z"></path>
+                        </svg>
+                     </button>
+                     <button class="btn btn-prev arrowBtn" element-id="6">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000" height="25px" width="25px" version="1.1" id="Layer_1" viewBox="0 0 330 330" xml:space="preserve" style="
+                           fill: white;
+                           ">
+                           <path id="XMLID_92_" d="M111.213,165.004L250.607,25.607c5.858-5.858,5.858-15.355,0-21.213c-5.858-5.858-15.355-5.858-21.213,0.001  l-150,150.004C76.58,157.211,75,161.026,75,165.004c0,3.979,1.581,7.794,4.394,10.607l150,149.996  C232.322,328.536,236.161,330,240,330s7.678-1.464,10.607-4.394c5.858-5.858,5.858-15.355,0-21.213L111.213,165.004z"></path>
+                        </svg>
+                     </button>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- Scale Globally Section -->
+         <section class="container-fluid scale-globally" element-id="17">
+            <div class="container" element-id="16">
+               <h3 class="scaleH3" element-id="15">Scale globally</h3>
+               <h2 class="goBlobalTxt" element-id="14">Go global with a single integration</h2>
+              <div class="scaleInner">
+                <div class="row" element-id="13">
+                  <div class="col-5 " element-id="12">
+                     <div class="contentSec" element-id="11">
+                        <svg class="Icon " width="30" height="36" viewBox="0 0 30 36" xmlns="http://www.w3.org/2000/svg" element-id="1336" style="
+                           ">
+                           <defs element-id="1335">
+                              <clipPath id="PlatformIconClipPath--a" element-id="1334">
+                                 <path d="M17.338 19.548l11.693 6.626c1.292.732 1.292 1.919 0 2.65l-11.693 6.627a5.254 5.254 0 01-4.676 0L.969 28.827c-1.292-.731-1.292-1.918 0-2.65l11.693-6.627a5.255 5.255 0 014.676-.002zm0-19l11.693 6.626c1.292.732 1.292 1.919 0 2.65l-11.693 6.627a5.254 5.254 0 01-4.676 0L.969 9.827c-1.292-.731-1.292-1.918 0-2.65L12.662.55a5.255 5.255 0 014.676-.002z" class="Icon__blendBackground" style="fill: var(--blendBackground);" element-id="1333"></path>
+                              </clipPath>
+                           </defs>
+                           <path d="M17.338 19.548l11.693 6.626c1.292.732 1.292 1.919 0 2.65l-11.693 6.627a5.254 5.254 0 01-4.676 0L.969 28.827c-1.292-.731-1.292-1.918 0-2.65l11.693-6.627a5.255 5.255 0 014.676-.002zm0-19l11.693 6.626c1.292.732 1.292 1.919 0 2.65l-11.693 6.627a5.254 5.254 0 01-4.676 0L.969 9.827c-1.292-.731-1.292-1.918 0-2.65L12.662.55a5.255 5.255 0 014.676-.002z" class="Icon__blendBackground" style="fill: var(--blendBackground);fill: #80e9ff;" element-id="1332"></path>
+                           <path d="M17.338 10.548l11.693 6.626c1.292.732 1.292 1.919 0 2.65l-11.693 6.627a5.254 5.254 0 01-4.676 0L.969 19.827c-1.292-.731-1.292-1.918 0-2.65l11.693-6.627a5.255 5.255 0 014.676-.002z" class="Icon__blendForeground" style="fill: #7a73ff;" element-id="1331"></path>
+                           <g clip-path="url(#PlatformIconClipPath--a)" element-id="1330">
+                              <path d="M17.338 10.548l11.693 6.626c1.292.732 1.292 1.919 0 2.65l-11.693 6.627a5.254 5.254 0 01-4.676 0L.969 19.827c-1.292-.731-1.292-1.918 0-2.65l11.693-6.627a5.255 5.255 0 014.676-.002z" class="Icon__blendForeground" style="fill: #0048e5;" element-id="1329"></path>
+                           </g>
+                        </svg>
+                        <h5 class="contentSecTitle" element-id="10">Launch a global marketplace
+                        </h5>
+                        <p class="contentSecPara" element-id="9">Let Stripe manage the complexity of compliance, licensing, and card network rules so you can easily onboard and pay out service providers in 35+ countries without needing to establish local entities.
+                        </p>
+                     </div>
+                     <div class="contentSec" element-id="8">
+                      <svg class="Icon " width="30" height="36" viewBox="0 0 30 36" xmlns="http://www.w3.org/2000/svg" element-id="1336" style="
+                      ">
+                      <defs element-id="1335">
+                         <clipPath id="PlatformIconClipPath--a" element-id="1334">
+                            <path d="M17.338 19.548l11.693 6.626c1.292.732 1.292 1.919 0 2.65l-11.693 6.627a5.254 5.254 0 01-4.676 0L.969 28.827c-1.292-.731-1.292-1.918 0-2.65l11.693-6.627a5.255 5.255 0 014.676-.002zm0-19l11.693 6.626c1.292.732 1.292 1.919 0 2.65l-11.693 6.627a5.254 5.254 0 01-4.676 0L.969 9.827c-1.292-.731-1.292-1.918 0-2.65L12.662.55a5.255 5.255 0 014.676-.002z" class="Icon__blendBackground" style="fill: var(--blendBackground);" element-id="1333"></path>
+                         </clipPath>
+                      </defs>
+                      <path d="M17.338 19.548l11.693 6.626c1.292.732 1.292 1.919 0 2.65l-11.693 6.627a5.254 5.254 0 01-4.676 0L.969 28.827c-1.292-.731-1.292-1.918 0-2.65l11.693-6.627a5.255 5.255 0 014.676-.002zm0-19l11.693 6.626c1.292.732 1.292 1.919 0 2.65l-11.693 6.627a5.254 5.254 0 01-4.676 0L.969 9.827c-1.292-.731-1.292-1.918 0-2.65L12.662.55a5.255 5.255 0 014.676-.002z" class="Icon__blendBackground" style="fill: var(--blendBackground);fill: #80e9ff;" element-id="1332"></path>
+                      <path d="M17.338 10.548l11.693 6.626c1.292.732 1.292 1.919 0 2.65l-11.693 6.627a5.254 5.254 0 01-4.676 0L.969 19.827c-1.292-.731-1.292-1.918 0-2.65l11.693-6.627a5.255 5.255 0 014.676-.002z" class="Icon__blendForeground" style="fill: #7a73ff;" element-id="1331"></path>
+                      <g clip-path="url(#PlatformIconClipPath--a)" element-id="1330">
+                         <path d="M17.338 10.548l11.693 6.626c1.292.732 1.292 1.919 0 2.65l-11.693 6.627a5.254 5.254 0 01-4.676 0L.969 19.827c-1.292-.731-1.292-1.918 0-2.65l11.693-6.627a5.255 5.255 0 014.676-.002z" class="Icon__blendForeground" style="fill: #0048e5;" element-id="1329"></path>
+                      </g>
+                   </svg>
+                        <h5 class="contentSecTitle" element-id="7">Launch a global marketplace
+                        </h5>
+                        <p class="contentSecPara" element-id="6">Let Stripe manage the complexity of compliance, licensing, and card network rules so you can easily onboard and pay out service providers in 35+ countries without needing to establish local entities.
+                        </p>
+                     </div>
+                  </div>
+                  <div class="col-7 px-5">
+                    <div class="Scontainer">
+                      <div data-card="4" class="card">
+                          <div class="image">
+                              <img src="images/Image (3).png" alt="image">
+                          </div>
+                        
+                      </div>
+              
+                      <div data-card="3" class="card">
+                          <div class="image">
+                              <img src="images/Image (4).png" alt="image">
+                          </div>
+                       
+                      </div>
+              
+                      <div data-card="2" class="card">
+                          <div class="image">
+                              <img src="images/Image (5).png" alt="image">
+                          </div>
+                       
+                      </div>
+              
+                      <div data-card="1" class="card">
+                          <div class="image">
+                              <img src="images/Image (6).png" alt="image">
+                          </div>
+                        
+                      </div>
+              
+                      <div data-card="0" class="card">
+                          <div class="image">
+                              <img src="images/Image (7).png" alt="image">
+                          </div>
+                         
+                      </div>
+                  </div>
+                  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+                  <script>
+              (function() {
+                  var currentCard = $('.card').length - 1; // Start from the last card
+                  var totalCards = $('.card').length;
+              
+                  var rotate = function() {
+                      // Slide the current card to the top (instead of bottom)
+                      $('.card').eq(currentCard).slideDown(400, 'swing', function() {
+                          // Move the current card to the beginning of the container (instead of the end)
+                          $(this).prependTo('.Scontainer').show();
+                          // Decrement currentCard, and if it goes below 0, set it to the index of the last card
+                          currentCard = (currentCard - 1 + totalCards) % totalCards;
+                      });
+                  };
+              
+                  $('.next').click(function() {
+                      rotate();
+                  });
+              
+              // Set an interval for automatic rotation
+              var rotationInterval = setInterval(rotate, 3000); // Change 3000 to your desired interval in milliseconds
+              
+              // Pause rotation on hover
+              $('.Scontainer').hover(function() {
+                  clearInterval(rotationInterval);
+              }, function() {
+                  rotationInterval = setInterval(rotate, 3000); // Change 3000 to your desired interval in milliseconds
+              });
+              })();
+              
+                  </script>
+                  </div>
+               </div>
+              </div>
+              
+            </div>
+         </section>
+      </main>
+   </body>
+   <script src="app.js"></script>
+
+   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+   <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+   <script src="//cdn.rawgit.com/tonystar/bootstrap-hover-tabs/v3.1.1/bootstrap-hover-tabs.js"></script>
+</html>
